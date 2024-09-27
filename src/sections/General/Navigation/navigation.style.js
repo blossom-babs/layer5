@@ -1,13 +1,135 @@
 import styled from "styled-components";
 
 const NavigationWrap = styled.header`
-  background-color: #F3FFFD;
   position: sticky;
-  width: 100%;
-  padding-top: 1rem;
+  width: 100vw;
   z-index: 9999;
   top: 0;
-  transition: all 0.3s ease 0s;
+  background-color: ${(props) => props.theme.body};
+  transition-property: color, background-color;
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  .nav-container {
+    display: flex;
+    @media (min-width: 912px) and (max-width: 992px) {
+      max-width: 850px;
+    }
+  }
+  .meshery-cta {
+    position: relative;
+    display: flex;
+    align-items: center;
+    right: -4.5rem;
+    top: 1.5rem;
+    max-height: 50px;
+
+    #signup {
+      margin-right: 10px;
+    }
+    .avatar-container {
+      cursor: pointer;
+      width: 2.5rem;
+      height: 2.5rem;
+      display: flex;
+      align-items: center;
+      border-radius: 50%;
+      background-color: #c5c5c5;
+      overflow: hidden;
+      border: 2px solid ${(props) => props.theme.primaryColor};
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      &:hover {
+        background-color: #ebebeb;
+        border: 2px solid ${(props) => props.theme.secondaryColor};
+      }
+    }
+
+    .avatar-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .banner-btn {
+      margin-right: 15px;
+      white-space: nowrap;
+      padding: 0.6rem 0.7rem;
+      min-width: 0rem;
+      font-weight: 600;
+    }
+    .default_avatar {
+      fill: ${(props) => props.theme.primaryColor};
+    }
+    .banner-btn.book-a-demo {
+      border: 1px solid transparent;
+      border-radius: 0.25rem;
+      color: ${(props) => props.theme.secondaryColor};
+      background: ${(props) => props.theme.grey121212ToWhite};
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      &:hover {
+        border: 1px solid ${(props) => props.theme.secondaryColor};
+        background-color: transparent;
+      }
+      &:active {
+        color: ${(props) => props.theme.keppelColor};
+        border: 1px solid ${(props) => props.theme.keppelColor};
+        background-color: transparent;
+      }
+    }
+    a {
+      display: flex;
+    }
+
+    @media screen and (max-width: 1550px) {
+      position: relative;
+      right: -4rem;
+      top: 1.5rem;
+    }
+    @media screen and (max-width: 1275px) {
+      right: -1.95rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+    }
+    @media screen and (max-width: 1215px) {
+      right: -1.5rem;
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+      }
+      .dropDown {
+        margin-left: 3rem;
+      }
+    }
+    @media screen and (max-width: 992px) {
+      right: -1rem;
+      #signup {
+        min-width: 95px;
+      }
+      #book-a-demo {
+        min-width: 95px;
+      }
+    }
+    @media screen and (max-width: 1100px) {
+      a {
+        display: none;
+      }
+      .avatar-container {
+        margin-left: 0.5em;
+        margin-bottom: 3em;
+      }
+      .dark-theme-toggle {
+        margin-left: 0.5em;
+        margin-bottom: 3em;
+      }
+      .dropDown-content {
+        left: -3rem;
+        right: 3rem;
+        top: 2rem;
+      }
+      .dropDown {
+        margin-left: 1rem;
+      }
+    }
+  }
   .navbar-wrap {
     width: 100%;
     display: flex;
@@ -17,22 +139,24 @@ const NavigationWrap = styled.header`
   }
   .mobile-menu-icon {
     display: none;
-    color: ${props => props.theme.menuColor};
+    color: ${(props) => props.theme.menuColor};
     font-size: 24px;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .dropdown {
     position: absolute;
-    background: white;
+    background: ${(props) => props.theme.body};
     opacity: 0;
-    border: 1px solid #f5f5f5;
+    border: 1px solid ${(props) => props.theme.grey141414ToGreyF5F5F5};
     border-radius: 50px;
     top: 100%;
     left: 0;
-    width: 100%;
+    width: 120%;
     display: block;
-    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.50);
-    animation: bobbleout ease .18s forwards;
+    box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
+    animation: bobbleout ease 0.18s forwards;
     pointer-events: none;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   .wrap {
     display: block;
@@ -41,7 +165,7 @@ const NavigationWrap = styled.header`
     left: 0;
     width: 100%;
     height: 350px;
-    margin-top: -2rem; 
+    margin-top: -2rem;
     visibility: visible;
   }
   .mobile-dropdown {
@@ -53,28 +177,30 @@ const NavigationWrap = styled.header`
     font-weight: 600;
   }
   .arrow-icon {
-    background: #00B39F;
+    background: #00b39f;
     border-radius: 25%;
   }
   .nav-grid {
     display: grid;
     grid-template-columns: 35% 65%;
     .hr {
+      background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
       display: flex;
       flex-direction: column;
       position: relative;
       padding: 3em;
-      background: #fafafa;
       border-radius: 50px 0 0 50px;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       .sub-item {
         padding: 0;
       }
       .section {
-        color: black;
+        color: ${(props) => props.theme.text};
         font-size: 20px;
         font-weight: 600;
-        margin-left:0px;
-        padding-left:0px;
+        margin-left: 0px;
+        padding-left: 0px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
       li:nth-last-child(2) {
         margin-bottom: auto;
@@ -86,36 +212,108 @@ const NavigationWrap = styled.header`
           padding: 2px 0;
           display: block;
           .readmore-btn {
-            color: ${props => props.theme.black};
+            color: ${(props) => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           }
           &:before {
             content: none;
           }
-          &:hover{
+          &:hover {
             .readmore-btn {
-                color: ${props => props.theme.menuHoverColor};
-                svg{
-                    margin-left: 3px;
-                      transform: scale(1.2);
-                }
+              color: ${(props) => props.theme.menuHoverColor};
+              svg {
+                margin-left: 3px;
+                transform: scale(1.2);
+              }
             }
           }
         }
       }
     }
     .nav-display {
-      border-left: 2px solid #f1f1f1;
-      background: #ffffff;
-      padding-top: 3em;
+      border-left: 2px solid ${(props) => props.theme.grey3C3C3CToGreyF1F1F1};
+      padding-top: 1em;
+      padding-bottom: 1em;
       border-radius: 0 50px 50px 0;
       display: grid;
       grid-template-columns: 50% 50%;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      @media screen and (max-width: 992px) and (min-width: 912px) {
+        padding: 0.5em;
+      }
+    }
+
+    .single-card {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .card-text {
+      display: flex;
+      flex-direction: column;
+      padding: 5%;
+      p {
+        font-weight: bold;
+        font-size: 1.25rem;
+        text-align: center;
+      }
+      h6 {
+        font-size: 15px;
+        line-height: 1.5rem;
+        text-align: center;
+      }
+      a {
+        padding: 0%;
+      }
     }
   }
+  .dropDown {
+    float: left;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    overflow: hidden;
+    border-radius: 10px;
+    margin-right: 1rem;
+    margin-left: 10rem;
+  }
+  .dropDown-content {
+    position: absolute;
+    background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
+    min-width: 160px;
+    box-shadow: rgba(0, 179, 159, 0.5) 0px 5px 10px 1px;
+    z-index: 1;
+    left: 3rem;
+    right: -3rem;
+    top: 4.5rem;
+    border-radius: 12px;
+  }
+  .drop-item-icon {
+    margin-right: 1rem;
+  }
+  .drop-item {
+    display: flex;
+    cursor: pointer;
+    color: ${(props) => props.theme.text};
+    line-height: 1.5rem;
+    font-size: 15px;
+  }
+  .dropDown-content a {
+    float: none;
+    color: ${(props) => props.theme.text};
+    padding: 12px 16px;
+    text-decoration: none;
+    text-align: left;
+    display: flex;
+  }
+
+  .dropDown-content a:hover {
+    color: ${(props) => props.theme.menuHoverColor};
+  }
+
   @keyframes nav-bar-anim {
     0% {
       opacity: 0;
-      transform: translate3d(0px, 0px, 0px) scale(.5, .5);
+      transform: translate3d(0px, 0px, 0px) scale(0.5, 0.5);
     }
 
     100% {
@@ -125,30 +323,31 @@ const NavigationWrap = styled.header`
   }
   @keyframes bobble {
     0% {
-        transform: translate3d(0px, -15px, 0px) scale(.75, .75); opacity: 0;
+      transform: translate3d(0px, -15px, 0px) scale(0.75, 0.75);
+      opacity: 0;
     }
     50% {
-        transform: translate3d(0px, 0px, 4px) perspective(800px) ;
-        opacity: 70%
+      transform: translate3d(0px, 0px, 4px) perspective(800px);
+      opacity: 70%;
     }
     100% {
-        transform: translate3d(0px, 0px, 8px) scale(1, 1);
-        opacity: 100%
+      transform: translate3d(0px, 0px, 8px) scale(1, 1);
+      opacity: 100%;
     }
   }
   @keyframes bobbleout {
     0% {
-        transform: translate3d(0px, 0px, 8px) scale(.9, .9);
-        opacity: 40%;
+      transform: translate3d(0px, 0px, 8px) scale(0.9, 0.9);
+      opacity: 40%;
     }
     50% {
-        transform: translate3d(0px, 0px, 4px) scale(.75, .75);
-        perspective(800px);
-        opacity: 20%;
+      transform: translate3d(0px, 0px, 4px) scale(0.75, 0.75);
+      perspective: (800px);
+      opacity: 20%;
     }
     100% {
-        transform: translate3d(0px, -15px, 0px) scale(.5, .5);
-        opacity: 0;
+      transform: translate3d(0px, -15px, 0px) scale(0.5, 0.5);
+      opacity: 0;
     }
   }
   @keyframes flowin {
@@ -166,7 +365,7 @@ const NavigationWrap = styled.header`
     }
   }
   ul:hover > ul {
-    animation: bobble ease .3s forwards;
+    animation: bobble ease 0.3s forwards;
     pointer-events: auto;
     visibility: visible;
   }
@@ -186,10 +385,10 @@ const NavigationWrap = styled.header`
       &:hover {
         .menu-link {
           span {
-            color: ${props => props.theme.menuHoverColor};
+            color: ${(props) => props.theme.menuHoverColor};
             &:before {
               opacity: 1;
-              animation: flowin .5s ease-in;
+              animation: flowin 0.5s ease-in;
             }
           }
         }
@@ -199,10 +398,9 @@ const NavigationWrap = styled.header`
       li {
         padding-top: 5px;
         a {
-          color: ${props => props.theme.menuColor};
           display: block;
           &:hover {
-            color: ${props => props.theme.menuHoverColor}; !important;
+            color: ${(props) => props.theme.menuHoverColor} !important;
           }
           &:before {
             content: none;
@@ -213,13 +411,14 @@ const NavigationWrap = styled.header`
     a,
     .nav-active {
       position: relative;
-      color: ${props => props.theme.menuColor};
+      color: ${(props) => props.theme.menuColor};
       display: flex;
       line-height: 1.5rem;
       font-size: 15px;
       transition: 450ms all;
-      padding: 0px 20px 5px 20px;
+      padding: 0px 20px 0px 20px;
       cursor: pointer;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       &:before {
         content: "";
         position: absolute;
@@ -228,15 +427,18 @@ const NavigationWrap = styled.header`
         width: 20px;
         height: 1px;
         opacity: 0;
-        background: ${props => props.theme.menuHoverColor};
+        background: ${(props) => props.theme.menuHoverColor};
         transition: 450ms all;
       }
       &:hover {
-        color: ${props => props.theme.menuHoverColor};
+        color: ${(props) => props.theme.menuHoverColor};
         &:before {
           opacity: 1;
         }
       }
+    }
+    a {
+      align-items: center;
     }
     .menu-link {
       margin: auto 1.25rem;
@@ -252,27 +454,35 @@ const NavigationWrap = styled.header`
           width: 100%;
           height: 1px;
           opacity: 0;
-          background: ${props => props.theme.menuHoverColor};
+          background: ${(props) => props.theme.menuHoverColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
       }
     }
   }
   .logo {
     margin-top: 8px;
-    transition: all 0.8s cubic-bezier(0.3, 0.8, 0.2, 1) 0s;
-    img {
+
+    svg {
       width: 155px;
+      .layer5-colorMode_svg__colorMode1 {
+        transition: fill 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+      }
+    }
+    @media screen and (max-width: 992px) and (min-width: 912px) {
+      width: 125px;
     }
   }
-  &.scrolled {    
+  &.scrolled {
     box-shadow: rgba(0, 179, 159, 0.2) 0px 10px 25px;
-    background: white;
     .nav {
-      .nav-item{
+      .nav-item {
         a {
-          color:${props => props.theme.menuColor};
+          color: ${(props) => props.theme.menuColor};
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
           &:hover {
-            color: ${props => props.theme.menuHoverColor};
+            color: ${(props) => props.theme.menuHoverColor};
           }
         }
       }
@@ -282,8 +492,16 @@ const NavigationWrap = styled.header`
       margin-top: -34px;
     }
   }
-
-  @media only screen and (max-width: 912px) {
+  @media only screen and (min-width: 912px) and (max-width: 992px) {
+    .nav {
+      margin-left: 1.375rem;
+    }
+    #book-a-demo,
+    #get-started-2 {
+      margin: 0;
+    }
+  }
+  @media only screen and (max-width: 1100px) {
     height: auto;
     min-height: 50px;
     padding: 15px 20px;
@@ -291,7 +509,7 @@ const NavigationWrap = styled.header`
       margin-top: 7px;
     }
     &.scrolled {
-      padding: 8px 20px;
+      padding: 15px 20px;
     }
     ul.collapsed {
       display: none;
@@ -305,6 +523,10 @@ const NavigationWrap = styled.header`
       width: 100%;
       display: block;
       margin-top: 7px;
+      svg {
+        width: 130px;
+      }
+
       img {
         width: 130px;
       }
@@ -318,17 +540,31 @@ const NavigationWrap = styled.header`
       padding: 0 10px;
       visibility: hidden;
       opacity: 0;
-      transition: .3s;
+      transition: 0.3s;
     }
     .mobile-dropdown {
       position: relative;
       padding: 10px 0 10px 15px;
       display: block;
-      background: white;
+      background: ${(props) => props.theme.grey141414ToGreyFAFAFA};
       border-radius: 10px;
-      box-shadow: 0px 10px 10px 10px rgba(0, 211, 169, 0.10);
+      box-shadow: 0px 5px 10px 1px rgba(0, 179, 159, 0.5);
       max-height: 400px;
       overflow-y: scroll;
+      scrollbar-width: thin;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .mobile-dropdown::-webkit-scrollbar {
+      border-radius: 3px;
+      width: 6px;
+    }
+    .mobile-dropdown::-webkit-scrollbar-track {
+      background-color: #cbced1;
+      border-radius: 3px;
+    }
+    .mobile-dropdown::-webkit-scrollbar-thumb {
+      background-color: #868e96;
+      border-radius: 3px;
     }
     .expand {
       visibility: visible;
@@ -353,22 +589,40 @@ const NavigationWrap = styled.header`
       animation: close-icon 0.3s ease-in;
     }
     @keyframes open-icon {
-      from { opacity: 0; }
-      to { opacity: 1; }
-      0% { transform: scale(0); }
-      100% { transform: scale(1); }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
     @keyframes close-icon {
-        from { opacity: 0; }
-        to { opacity: 1; }
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(180deg); }
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(180deg);
+      }
     }
     .mobile-nav-item {
       padding: 1px;
       .menu-item {
         font-size: 16px;
         font-weight: 600;
+        line-height: 2rem;
+        font-size: 1.25rem;
       }
       a:before {
         content: none;
@@ -379,29 +633,42 @@ const NavigationWrap = styled.header`
     }
     .mobile-nav-subitem {
       padding-left: 10px;
+      padding-top: 0.4rem;
+    }
+    .mobile-sub-menu-item {
+      font-size: 1.1rem;
     }
   }
-  
+
+  .nav-link-active {
+    color: ${(props) => props.theme.menuHoverColor};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
   .anchor:before {
     content: none;
   }
-  .post-block{
+  .post-block {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     min-height: 300px;
     overflow: hidden;
     margin: 0 auto;
-    &:hover{
-      .readmore-btn{
-          color: ${props => props.theme.menuHoverColor};
-          svg{
-              margin-left: 3px;
-                transform: scale(1.2);
-          }
+    padding: 1rem 1rem 0rem 1rem;
+    &:hover {
+      box-shadow: ${(props) => props.theme.boxShadowGreyBABABAtoBlackTwoFive};
+      border-radius: 1rem;
+      .readmore-btn {
+        color: ${(props) => props.theme.menuHoverColor};
+        svg {
+          margin-left: 3px;
+          transform: scale(1.2);
+        }
       }
-      .post-title{
-          color: ${props => props.theme.menuHoverColor};
+      .post-title {
+        color: ${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
     }
     a:before {
@@ -409,53 +676,57 @@ const NavigationWrap = styled.header`
     }
   }
 
-  .readmore-btn-wrapper{
+  .readmore-btn-wrapper {
     display: flex;
     justify-content: space-between;
   }
 
-  .post-thumb-block{
+  .post-thumb-block {
     overflow: hidden;
-    border-radius: 10px;  
+    border-radius: 10px;
     height: 160px;
     max-width: 100%;
     margin: 0 auto;
-    .gatsby-image-wrapper{
-        height:100%;
-        transition: all 0.3s ease-in;
+    .gatsby-image-wrapper,
+    .old-gatsby-image-wrapper {
+      height: 100%;
+      transition: all 0.3s ease-in;
     }
-    img{
-        max-width: 240px;
-        max-height: 160px;
-        width: auto;
-        height: inherit;
-        display: block;
-        text-align: center;
-        margin-left: auto;
+    img {
+      max-width: 240px;
+      max-height: 160px;
+      width: auto;
+      height: inherit;
+      display: block;
+      text-align: center;
+      margin-left: auto;
     }
   }
-  .post-content-block{
+  .post-content-block {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
-    justify-content: space-between;
+    justify-content: flex-start;
     border-radius: 0 0 3px 3px;
     position: relative;
-    padding: 20px 35px;
+    padding: 20px 0px;
   }
-  .post-title{
+  .post-title {
     font-size: 16px;
     font-weight: 600;
     line-height: 28px;
-    color: black;
+    color: ${(props) => props.theme.lightTextColor};
     margin-bottom: 20px;
     display: block;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-transition: 450ms all;
-    transition: 450ms all;
-    
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    &:hover {
+      color: ${(props) => props.theme.highlightLightColor};
+    }
+
     @supports (-webkit-line-clamp: 2) {
       overflow: hidden;
       text-overflow: ellipsis;
@@ -466,16 +737,171 @@ const NavigationWrap = styled.header`
     }
   }
   .readmore-btn {
-    color: rgba(0,0,0,0.35);
+    color: ${(props) => props.theme.lightTextColor};
     display: flex;
     align-items: center;
     transition: all 0.3s linear;
     padding-left: 0px;
-    svg{
+    svg {
       margin-left: 0px;
       font-size: 27px;
       transition: all 0.3s linear;
     }
+  }
+  .dark-theme-toggle {
+    /* margin-left: 2rem; */
+    visibility: ${(props) => typeof props.theme.DarkTheme === "boolean" ? "visible" : "hidden"};
+  }
+
+  .toggle {
+    --size: 1.5rem;
+    appearance: none;
+    outline: none;
+    cursor: pointer;
+    width: var(--size);
+    height: var(--size);
+    box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+    border-radius: 999px;
+    color: #00b39f;
+    transition: all 300ms;
+    vertical-align: middle;
+  }
+
+  .toggle:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+    transform: scale(0.75);
+    color: #3c494f;
+    box-shadow: inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+        var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+  }
+
+  .toggle {
+    z-index: 1;
+  }
+
+  .toggle:checked ~ .background {
+    --bg: white;
+  }
+
+  .toggle:checked ~ .title {
+    --color: #fa0;
+  }
+
+  .transition-container {
+    margin: 0%;
+    max-width: 68%;
+    position: relative;
+    z-index: -1;
+    svg {
+      .prometheus-partial-colorMode_svg__colorMode1,
+      .pod-partial-colorMode_svg__colorMode1,
+      .ingress-gateway-partial-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+      .empty-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToGrey121212};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .service-interface-partial-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .kubernetes-partial-colorMode_svg__colorMode1 {
+        fill: ${(props) => props.theme.blackToWhite};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+
+      .kubernetes-partial-colorMode_svg__colorMode2 {
+        fill: ${(props) => props.theme.whiteToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+
+  .ingress-gateway,
+  .kubernetes,
+  .pod,
+  .prometheus,
+  .supporting-arrows,
+  .service-interface {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    scale: 0.7;
+    opacity: 0;
+    transition: 1s;
+  }
+
+  .supporting-arrows {
+    opacity: 0;
+    scale: 1;
+  }
+
+  .supporting-arrows-transition {
+    opacity: 1;
+    transition: 0.5s ease-out 0.75s;
+  }
+
+  .ingress-gateway {
+    translate: -40% 0;
+  }
+
+  .ingress-gateway-transition {
+    transform: translateX(40%);
+    scale: 1;
+    opacity: 1;
+    transition: 0.7s;
+  }
+
+  .kubernetes {
+    translate: 50% -30%;
+  }
+
+  .kubernetes-transition {
+    transform: translateX(-50%) translateY(30%);
+    scale: 1;
+    opacity: 1;
+    transition: 0.5s;
+  }
+
+  .pod {
+    translate: 40% 30%;
+  }
+
+  .pod-transition {
+    transform: translateX(-40%) translateY(-30%);
+    scale: 1;
+    opacity: 1;
+    transition: 0.7s;
+  }
+
+  .prometheus {
+    translate: -50% 30%;
+  }
+
+  .prometheus-transition {
+    transform: translateX(50%) translateY(-30%);
+    scale: 1;
+    opacity: 1;
+    transition: 1s;
+  }
+
+  .service-interface {
+    scale: 1;
+    opacity: 1;
   }
 `;
 

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const TutorialsTableWrapper = styled.div`
+  box-shadow:0 2px 16px rgba(0,0,0,0.2);
+  
   table{
     display: table;
     width: 100%;
@@ -13,9 +15,10 @@ export const TutorialsTableWrapper = styled.div`
     th, tr {
       height: 3.75rem;
       vertical-align: middle;
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     tr:nth-child(odd) {
-      background-color: #F0F0F0;
+      background-color: ${props => props.theme.grey212121ToWhite};
     }
     th {
       background-color: ${props => props.theme.secondaryColor};

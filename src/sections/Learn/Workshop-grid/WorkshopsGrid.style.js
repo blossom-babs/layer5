@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const WorkshopPageWrapper = styled.div`
+	Button:hover {
+	box-shadow: none;
+	}
 	.btn-and-status {
 		display: flex;
 		width: 97%;
@@ -13,6 +16,7 @@ export const WorkshopPageWrapper = styled.div`
 			margin-left: 1.25rem;
 			float: left;
 			padding-left: 1.5625rem;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
     h2.sub-heading {
@@ -45,7 +49,7 @@ export const WorkshopPageWrapper = styled.div`
 		color: #eee;
 		background-color: ${props => props.theme.secondaryColor};
 		border: none;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		border-radius: 0.9375rem;
 		outline: none;
 	}
@@ -68,16 +72,17 @@ export const WorkshopPageWrapper = styled.div`
 
 	button.readmeBtn {
 		display: flex;
+		color: ${props => props.theme.text};
 		background: transparent;
 		border: none;
 		justify-content: center;
 		align-items: center;
 		font-size: 1.125rem;
 		cursor: pointer;
-		transition: 0.2s ease-in all;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.linkColor};
 		}
 	}
 
@@ -92,11 +97,11 @@ export const WorkshopPageWrapper = styled.div`
 
 	a.siteLink {
 		padding: 0.5rem 0.25rem 0rem;
-		filter: grayscale(100%) brightness(0.5);
+		filter: grayscale(100%) brightness(${props => props.theme.siteLinkBrightness});
 		transition: 0.2s ease-in-out all;
 
 		&:hover {
-			color: ${props => props.theme.primaryLightColorTwo};
+			color: ${props => props.theme.keppelColor};
 			filter: none;
 		}
 	}
@@ -111,7 +116,7 @@ export const WorkshopPageWrapper = styled.div`
 		display: none;
 		width: 100%;
 		height: 100%;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 	}
 
 	.active {
@@ -158,13 +163,17 @@ export const WorkshopPageWrapper = styled.div`
 		padding-bottom: 3.75rem;
 	}
 
+	
+
 	.workshop-grid-card {
+		background-color: ${props => props.theme.grey212121ToWhite};
 		width: 100%;
 		display: block;
 		height: auto;
 		border-radius: 0.3125rem;
 		margin-bottom: 1.25rem;
 		box-shadow: 0rem 0.0625rem 0.3125rem rgba(0, 0, 0, 0.2);
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		&:hover {
 			.main {
@@ -200,8 +209,10 @@ export const WorkshopPageWrapper = styled.div`
 	}
 
 	.para {
+		color: ${props => props.theme.text};
 		text-align: center;
 		font-weight: 500;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.rqst-workshop {
@@ -211,7 +222,9 @@ export const WorkshopPageWrapper = styled.div`
 			margin: auto;
 			display: block;
 		}
-		
+		Button:hover {
+			box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
+		}
 		a {
 			margin: auto;
 		}

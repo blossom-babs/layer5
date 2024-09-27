@@ -1,5 +1,5 @@
 import React from "react";
-import {FaSearch } from "react-icons/fa"; 
+// import {FaSearch } from "react-icons/fa";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle from "../../../reusecore/SectionTitle";
@@ -7,10 +7,10 @@ import Button from "../../../reusecore/Button";
 import ParticleComponent from "../../../reusecore/Particle";
 
 import BannerSectionWrapper from "./banner.style";
-import imgHero1 from "../../../assets/images/hosting/hosting/banner/01.png";
-import imgHero2 from "../../../assets/images/hosting/hosting/banner/02.png";
+import imgHero1 from "../../../assets/images/hosting/hosting/banner/01.webp";
+import imgHero2 from "../../../assets/images/hosting/hosting/banner/02.webp";
 
-const BannerHosting= () => {
+const BannerHosting = () => {
   return (
     <BannerSectionWrapper>
       <img src={imgHero1} alt="img" className="section-particle one"/>
@@ -24,7 +24,7 @@ const BannerHosting= () => {
             >
               <h4>Save up to <span>99%</span> with our holiday Deals</h4>
               <h1>
-                We provide the best web hosting  
+                We provide the best web hosting
                  solution around the world
               </h1>
               <p>
@@ -34,9 +34,9 @@ const BannerHosting= () => {
             </SectionTitle>
             <div className="domain-search-block">
               <div className="search-box">
-                <input type='text' placeholder='Search domain' />
+                <input type="text" placeholder="Search domain" />
                 <Button className="src-btn">
-                  <FaSearch />
+                  {/* <FaSearch /> */}
                 </Button>
               </div>
               <div className="domain-extention-block">

@@ -13,7 +13,7 @@ export const ScenarioCardWrapper = styled.div`
             transition: 0.2s ease-in all;
         }
         &:hover .open-close-scenario {
-            color: ${props => props.theme.primaryLightColorTwo};
+            color: ${props => props.theme.secondaryColor};
         }
     }
     .scenario-cover {
@@ -73,8 +73,23 @@ export const ScenarioCardWrapper = styled.div`
 		display: none;
 	}
 
+    .sub-content {
+        display:flex;
+        color: white;
+        .ak {
+            color: ${props => props.theme.linkColor};
+            &:hover {
+                color: white;
+            }
+        } 
+        justify-content:center; 
+        margin-top:4rem;
+        width:100%;
+    }
+    
+
 	.active {
-		display: block;
+		display: blwock;
 		width: 100%;
 		height: 100%;
 		padding: 1.5rem;
@@ -93,7 +108,7 @@ export const ScenarioCardWrapper = styled.div`
         a {
             color: ${props => props.theme.white};
             &:hover {
-                color: ${props => props.theme.primaryLightColorTwo};
+                color: ${props => props.theme.secondaryColor};
             }
         }
     }

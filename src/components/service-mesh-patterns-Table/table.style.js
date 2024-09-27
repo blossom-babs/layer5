@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import theme from "../../theme/app/themeStyles";
 
 export const TableWrapper = styled.div`
 
@@ -18,8 +17,8 @@ export const TableWrapper = styled.div`
 
 
         th{
-            background:${theme["tertiaryColor"]};
-            color:${theme["white"]};
+            background:#1e2117;
+            color:${(props) => props.theme.white};
             padding:10px;
             border-collapse:collapse;
 
@@ -32,7 +31,7 @@ export const TableWrapper = styled.div`
             }
 
             a{
-                color:${theme["shadowLightColor"]};
+                color:${(props) => props.theme.shadowLightColor};
 
                 &:hover{
                     color:#ccc;
@@ -53,7 +52,7 @@ export const TableWrapper = styled.div`
         
         .table-header {
             border-radius: 0 !important;
-            background-color: ${theme["primaryColor"]};
+            background-color: #3c494f;
         }
 
         tbody{
@@ -61,15 +60,15 @@ export const TableWrapper = styled.div`
                 border-bottom:1px solid #e0e0e0;
 
                 &:hover{
-                    box-shadow: 0px 2px 15px -10px black;
                     transform: translateY(0px);
+                    box-shadow: ${(props) => props.theme.boxShadowGreen00B39FtoBlack};
                 }
             }
 
             .bold{
             font-weight:650;
-            background:${theme["secondaryColor"]};
-            color:${theme["tertiaryColor"]};
+            background:${(props) => props.theme.secondaryColor};
+            color:${(props) => props.theme.tertiaryColor};
             }
         }
     }

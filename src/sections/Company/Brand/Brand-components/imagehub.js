@@ -1,11 +1,11 @@
 import React from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import ImageHub from "../../../../assets/images/image-hub/layer5-image-hub.png";
-import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-white.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import ImageHub from "../../../../assets/images/image-hub/layer5-image-hub.webp";
+import ImageHubWhite from "../../../../assets/images/image-hub/layer5-image-hub-white.webp";
 
 
 const ImageHubBrand = () => {

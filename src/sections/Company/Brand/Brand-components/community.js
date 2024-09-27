@@ -2,9 +2,9 @@ import React from "react";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.png";
-import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import MeshMateLogoLight from "../../../../assets/images/meshmate/meshmate-icon-white.webp";
+import MeshMateLogo from "../../../../assets/images/meshmate/meshmate-icon.webp";
 
 
 const CommunityBrand = () => {
@@ -43,9 +43,9 @@ const CommunityBrand = () => {
       </Row>
       <Row>
         <Col>
-          <h3 className="layerH3 in">
+          <h2 className="layerH3 in">
             Logos
-          </h3>
+          </h2>
         </Col>
         <Row className="ImgDiv">
           <Col xs={12} sm={3}>
@@ -58,9 +58,9 @@ const CommunityBrand = () => {
       </Row>
       <Row>
         <Col>
-          <h3 className="layerH3 in">
+          <h2 className="layerH3 in">
             Colors
-          </h3>
+          </h2>
         </Col>
         <Col>
           <p>

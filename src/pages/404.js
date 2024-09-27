@@ -1,26 +1,17 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
 
-import Layout from "../components/layout";
 import SEO from "../components/seo";
-
-import Navigation from "../sections/General/Navigation";
 import L404 from "../sections/404";
-import Footer from "../sections/General/Footer";
 
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
-
-const NotFoundPage = () => (
-  <ThemeProvider theme={theme}>
-    <Layout>
-      <GlobalStyle />
-      <SEO title="What a mesh!" />
-      <Navigation />
+const NotFoundPage = () => {
+  return (
+    <>
       <L404 />
-      <Footer />
-    </Layout>
-  </ThemeProvider>
-);
- 
+
+    </>
+  );
+};
+export const Head = () => {
+  return <SEO title="What a mesh!" />;
+};
 export default NotFoundPage;

@@ -1,4 +1,4 @@
-export const load_balancer=[
+export const load_balancer = [
   {
     name: "A10 Thunder ADC",
     link: "https://www.a10networks.com/products/thunder-adc/",
@@ -8,6 +8,11 @@ export const load_balancer=[
     name: "NGINX",
     link: "https://nginx.org/en/",
     desc: "NGINX -  is open source software for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
+  },
+  {
+    name: "Pipy",
+    link: "https://flomesh.io/pipy/",
+    desc: "Flomesh Pipy is an open source programmable network proxy for web serving, reverse proxying, caching, load balancing, media streaming, and more.",
   },
   {
     name: "Proxygen",

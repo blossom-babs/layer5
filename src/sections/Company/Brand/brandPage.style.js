@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 const BrandPageWrapper = styled.section`
 	position: relative;
-	overflow: hidden;
+	overflow-x: hidden;
 	margin-bottom: 2rem;
 
 	.brandHeader {
 		padding: 6rem 0;
-		background: ${props => props.theme.tertiaryColor};
+		background:${props => props.theme.grey212121ToGreen1E2117};
 		text-align: center;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		h1{
 			color: ${props => props.theme.white};
 		}
@@ -28,8 +29,9 @@ const BrandPageWrapper = styled.section`
 	}
 
 	.logo {
-		background: ${props => props.theme.primaryColor};
+		background: ${ props => props.theme.blackToGreen3C494F};
 		padding: 0.95rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 
 	.brand-row {
@@ -46,14 +48,27 @@ const BrandPageWrapper = styled.section`
 		z-index: 1;
 	}
 
+      @media screen and (min-width: 768px) and (max-height: 725px) {
+	    .brand-nav-col {
+	        padding-right: 0px !important;
+	    }
+		.nav-fixed {
+		height:calc(100vh - 6rem);
+		overflow-y:auto;
+		padding-top:1rem;
+		padding-bottom:1rem
+	}
+
+	}
+
 	.header_link {
 		display: block;
 		margin: 0;
 		position: relative;
 		width: fit-content;
-		color: rgba(0, 0, 0, 0.4);
+		color: ${props => props.theme.whiteFourToBlackFour};
 		font: 500 1.2rem/2.5rem 'Qanelas Soft', sans-serif;
-		transition: 0.2s border ease-in-out;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		span::before {
 			content: '';
@@ -144,6 +159,7 @@ const BrandPageWrapper = styled.section`
 		width: 100%;
 		margin: auto;
 		justify-content: space-around;
+		gap: 1rem;
 	}
 	.Layer5Logos {
 		font-style: italic;
@@ -160,8 +176,18 @@ const BrandPageWrapper = styled.section`
 	}
 
 	@media screen and (max-width: 575px) {
-		.ImgDiv, .color-code-wrapper {
+		.color-code-wrapper{
 			margin-left: 0px;
+		}
+		.ImgDiv img {
+			margin: auto;
+			width: auto;
+			max-width: 100%;
+			height: auto;
+			max-height: 200px;
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
 		}
 		img.Layer5Icon {
 			width: auto;
@@ -183,9 +209,9 @@ const BrandPageWrapper = styled.section`
 
 	.blond-color-box, .white-color-box {
 		.PalletBox {
-			color: ${props => props.theme.tertiaryColor};
+			color: rgb(30, 33, 23);
 			.color-name {
-				color: ${props => props.theme.tertiaryColor};
+				color: rgb(30, 33, 23);
 			}
 		}
 	}
@@ -193,6 +219,7 @@ const BrandPageWrapper = styled.section`
 	.white-color-box {
 		.PalletBox {
 			border: 1px solid ${props => props.theme.tertiaryColor};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		}
 	}
 

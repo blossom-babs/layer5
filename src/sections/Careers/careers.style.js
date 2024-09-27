@@ -1,8 +1,13 @@
 import styled from "styled-components";
 
 const CareersSectionWrapper = styled.div`
+p {
+    color: ${props => props.theme.whiteEightToBlack};
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
     h1{
-        color: black;
+        color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .page-header{
         margin:4rem auto;
@@ -18,18 +23,21 @@ const CareersSectionWrapper = styled.div`
     .videoText {
         flex-wrap: nowrap;
         margin: auto;
-        margin-top: 4rem;
+        margin-top: 8rem;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
     }
     .introText{
-        width: 50%;
-        clear:both;
         margin-top: 9rem;
     }
     .introText h1{
         margin-bottom: 1rem;
     }
     .introText p {
-        text-align: justify
+        text-align: justify;
+        color: ${props => props.theme.whiteEightToBlack};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .introVideo{
         width: 50%;
@@ -78,6 +86,8 @@ const CareersSectionWrapper = styled.div`
     .opensource-section-text > p{
         max-width: 60rem;
         margin: auto;
+        color: white;
+
     }
     .opensource-section-img{
         margin-top: -8rem;

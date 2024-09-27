@@ -6,7 +6,9 @@ export const PositionApplyWrapper = styled.div`
     text-align: center;
     .pos-logo{
         width: 2.25rem;
+        filter: invert(${(props) => props.theme.meshInterfaceLogoFilter});
         margin: 0 0.5rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     .apply-now {
@@ -15,6 +17,9 @@ export const PositionApplyWrapper = styled.div`
         padding-top: 0.5rem;
         width: 60%;
         margin: auto;
+        h5 {
+          transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
     }
 
     .apply{
@@ -32,7 +37,7 @@ export const PositionApplyWrapper = styled.div`
 `;
 
 const PositionApply = () => {
-  return(
+  return (
     <PositionApplyWrapper>
       <div className="apply-now">
         <div className="apply">

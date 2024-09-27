@@ -12,11 +12,19 @@ const MeshMatesWrapper = styled.div`
        }
        
        .meshmate-logo-wrapper{
+          display: flex;
+          justify-content: center;
           background-color: ${props => props.theme.secondaryLightColorTwo};
           border-bottom-left-radius: 4.375rem;
           border-bottom-right-radius: 4.375rem;
           img{
             max-height: 25rem;
+          }
+          svg {
+            max-height: 25rem;
+            .meshmate-stack-colorMode_svg__colorMode1 {
+                  fill: ${props => props.theme.whiteToGreen3C494F};
+                }
           }
        }
     }
@@ -39,6 +47,17 @@ const MeshMatesWrapper = styled.div`
             font-weight: 600;
         }
     }
+.bookcomponent{
+    align-items: center;
+    float: right;
+    margin: 1rem;
+    padding: 20px;
+}
+@media (max-width: 576px) {
+    .bookcomponent {
+      float: none;
+    }
+  }
     .meshmate-meet{
         margin: 4.25rem auto 2.75rem auto;
         h2{

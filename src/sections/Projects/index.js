@@ -6,10 +6,10 @@ import SectionTitle from "../../reusecore/SectionTitle";
 import Button from "../../reusecore/Button";
 import VintageBox from "../../reusecore/VintageBox";
 
-import projectImage1 from "../../assets/images/app/projects/landscape.png";
-import projectImage2 from "../../assets/images/app/projects/smp.png";
-import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.png";
-import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.png";
+import projectImage1 from "../../assets/images/app/projects/landscape.webp";
+import projectImage2 from "../../assets/images/app/projects/smp.webp";
+import projectImage3 from "../../assets/images/app/projects/meshery-logo-light.webp";
+import projectImage4 from "../../assets/images/app/projects/meshery-logo-light.webp";
 import Icon from "../../assets/images/app/projects/arrow.svg";
 
 import ProjectItemWrapper from "./projectSection.style";
@@ -43,9 +43,9 @@ const Projects = () => {
                 <div className="project__block__inner">
                   <img src={projectImage3} alt="Layer5 open source projects" />
                   <h3>Meshery</h3>
-                  <p>Service Mesh Management</p>
+                  <p>Cloud Native Management</p>
                   <Link to="#">
-                    <img src={Icon} alt="Meshery, the service mesh management plane" />
+                    <img src={Icon} alt="Meshery, the cloud native management plane" />
                   </Link>
                 </div>
                 <div className="project__block__inner">
@@ -68,11 +68,11 @@ const Projects = () => {
               <h4>Projects</h4>
 
               <h2>
-                                Operate any service mesh <span>with confidence</span>.
+                Operate any service mesh <span>with confidence</span>.
               </h2>
             </SectionTitle>
             <p className="project-text">
-                        Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services. 
+              Layer5 projects establish industry standards and enable service developers, owners, and operators with repeatable patterns and best practices for managing all aspects of distributed services.
             </p>
             <VintageBox
               right={true}

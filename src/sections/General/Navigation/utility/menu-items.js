@@ -4,8 +4,42 @@ import communityGreen from "../../../../assets/images/community/community-green.
 const Data = {
   menuItems: [
     {
-      name: "Landscape",
-      path: "/service-mesh-landscape",
+      name: "Solutions",
+      path: "/cloud-native-management/kanvas",
+      subItems: [
+        {
+          name: "Developer-defined Infrastructure",
+          path: "/solutions/developer-defined-infrastructure",
+          sepLine: true
+        },
+        {
+          name: "Cloud Native Deployments by Diagram",
+          path: "/solutions/cloud-native-deployments-by-diagram",
+          sepLine: true
+        },
+        {
+          name: "Kubernetes Multi-cluster Operation",
+          path: "/solutions/kubernetes-multi-cluster-operation",
+          sepLine: true
+        },
+        {
+          name: "Collaborative GitOps",
+          path: "/cloud-native-management/kanvas/collaborate",
+          sepLine: true
+        },
+        {
+          name: "GitOps with Cloud Native Insights",
+          path: "/solutions/gitops",
+          sepLine: true
+        },
+      ],
+      actionItems: [
+        {
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+      ],
+
       // subItems: [
       //     {
       //         name: "Current Home",
@@ -28,6 +62,12 @@ const Data = {
       //         sepLine: true
       //     }
       // ],
+      // actionItems: [
+      //   {
+      //     actionName: "All projects",
+      //     actionLink: "/projects",
+      //   },
+      // ],
       // actionName: "Home",
       // actionLink: "/",
       // div1: {
@@ -40,50 +80,49 @@ const Data = {
       // }
     },
     {
-      name: "Projects",
-      path: "/projects",
+      name: "Products",
+      path: "/products",
       subItems: [
         {
-          name: "Distributed Performance",
-          path: "/projects/distributed-performance-management",
-          sepLine: true
-        },
-        {
-          name: "Image Hub",
-          path: "/projects/image-hub",
-          sepLine: true
-        },
-        {
           name: "Meshery",
-          path: "/service-mesh-management/meshery",
+          path: "/cloud-native-management/meshery",
           sepLine: true
+        },
+        {
+          name: "Kanvas",
+          path: "/cloud-native-management/kanvas",
         },
         // {
-        //   name: "Service Mesh Landscape",
-        //   path: "/landscape",
-        //   sepLine: true
+        //   name: "---",
+        //   // path: "/cloud-native-management/kanvas",
+
         // },
         {
-          name: "Service Mesh Interface",
-          path: "/projects/service-mesh-interface-conformance",
-          sepLine: true
+          name: "Catalog",
+          path: "/cloud-native-management/catalog",
         },
         {
-          name: "Service Mesh Performance",
-          path: "/projects/service-mesh-performance",
-          sepLine: true
+          name: "Docker Extension",
+          path: "/docker-extension-meshery",
         },
         {
-          name: "GetNighthawk",
-          path: "/projects/getnighthawk",
-          sepLine: true
-        }
+          name: "Playground",
+          path: "/cloud-native-management/playground",
+        },
       ],
       actionItems: [
         {
-          actionName: "All projects",
+          actionName: "Pricing",
+          actionLink: "/pricing",
+        },
+        {
+          actionName: "Open source projects",
           actionLink: "/projects",
-        }
+        },
+        // {
+        //   actionName: "Pricing",
+        //   actionLink: "/pricing",
+        // },
       ],
       // div1: {
       //   src: meshery,
@@ -95,47 +134,71 @@ const Data = {
       // }
     },
     {
-      name: "Learn",
-      path: "/learn",
-      subItems: [
-        {
-          name: "Books",
-          path: "/learn/service-mesh-books",
-          sepLine: true
-        },
-        {
-          name: "Workshops",
-          path: "/learn/service-mesh-workshops",
-          sepLine: true
-        },
-        {
-          name: "Service Mesh Labs",
-          path: "/learn/service-mesh-labs",
-          sepLine: true
-        }
-      ],
-      actionItems: [
-        {
-          actionName: "Free service mesh training",
-          actionLink: "/learn",
-        }
-      ],
-      // div1: {
-      //   src: meshery,
-      //   descr: "How I schooled my seniors"
-      // },
-      // div2: {
-      //   src: img2,
-      //   descr: "Service Mesh Istio patterns for multitenancy"
-      // }
+      name: "Integrations",
+      path: "/cloud-native-management/meshery/integrations"
     },
+    // {
+    //   name: "Learn",
+    //   path: "/learn",
+    //   subItems: [
+    //     {
+    //       name: "Books",
+    //       path: "/learn/service-mesh-books",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Forum",
+    //       path: "https://discuss.layer5.io",
+    //       sepLine: true,
+    //       externalLink: true
+    //     },
+    //     {
+    //       name: "Workshops",
+    //       path: "/learn/service-mesh-workshops",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Learning Paths",
+    //       path: "/learn/learning-paths",
+    //       sepLine: true
+    //     },
+    //     {
+    //       name: "Interactive Labs",
+    //       path: "/learn/service-mesh-labs",
+    //       sepLine: true
+    //     },
+    //   ],
+    //   actionItems: [
+    // {
+    //   actionName: "Join the discussion",
+    //   actionLink: "https://discuss.layer5.io",
+    // },
+    //     // {
+    //     //   actionName: "Free service mesh training",
+    //     //   actionLink: "/learn",
+    //     // }
+    //   ],
+    //   // div1: {
+    //   //   src: meshery,
+    //   //   descr: "How I schooled my seniors"
+    //   // },
+    //   // div2: {
+    //   //   src: img2,
+    //   //   descr: "Service Mesh Istio patterns for multitenancy"
+    //   // }
+    // },
     {
       name: "Community",
       path: "/community",
       subItems: [
         {
-          name: "Calendar",
-          path: "/community/calendar",
+          name: "Open Source Projects",
+          path: "/projects",
+          sepLine: true
+        },
+        {
+          name: "Handbook",
+          path: "/community/handbook",
           sepLine: true
         },
         {
@@ -144,31 +207,39 @@ const Data = {
           sepLine: true
         },
         {
+          name: "Newcomers",
+          path: "/community/newcomers",
+        },
+        {
           name: "MeshMates",
           path: "/community/meshmates",
-          sepLine: true
         },
-        // {
-        //     name: "MeshMasters",
-        //     path: "/community/meshmasters"
-        // },
-        // {
-        //     name: "Newcomers",
-        //     path: "/community/newcomers"
-        // },
         {
           name: "Events",
           path: "/community/events",
           sepLine: true
         },
-      ],
-      actionItems: [
         {
-          actionName: "Join the community",
-          actionLink: "/community/newcomers",
+          name: "Calendar",
+          path: "/community/calendar",
         },
         {
-          actionName: "Open source internship programs",
+          name: "Recognition Program",
+          path: "https://badges.layer5.io",
+          sepLine: true
+        },
+      ],
+      actionItems: [
+        // {
+        //   actionName: "Newcomer's journey",
+        //   actionLink: "/community/newcomers",
+        // },
+        {
+          actionName: "Discussion forum",
+          actionLink: "https://discuss.layer5.io",
+        },
+        {
+          actionName: "Open source internships",
           actionLink: "/careers/programs",
         }
       ],
@@ -179,13 +250,13 @@ const Data = {
       },
       div2: {
         src: communityGreen,
-        descr: "Join the service mesh community",
+        descr: "Join the cloud native community",
         path: "/community"
       }
     },
     {
-      name: "Blog",
-      path: "/blog",
+      name: "Resources",
+      path: "/resources",
       subItems: [
         {
           name: "Blog",
@@ -193,12 +264,49 @@ const Data = {
           sepLine: true
         },
         {
-          name: "News",
-          path: "/news",
+          name: "Docs",
+          path: "https://docs.layer5.io",
           sepLine: true
-        }
+        },
+        // {
+        //   name: "News",
+        //   path: "/news",
+        //   sepLine: true
+        // },
+        {
+          name: "Learn",
+          path: "/learn",
+          sepLine: true
+        },
+        {
+          name: "Books",
+          path: "/learn/service-mesh-books",
+
+        },
+        // {
+        //   name: "Forum",
+        //   path: "https://discuss.layer5.io",
+        //   sepLine: true,
+        //   externalLink: true
+        // },
+        {
+          name: "Workshops",
+          path: "/learn/service-mesh-workshops",
+        },
+        {
+          name: "Learning Paths",
+          path: "/learn/learning-paths",
+        },
+        {
+          name: "Interactive Labs",
+          path: "/learn/service-mesh-labs",
+        },
       ],
       actionItems: [
+        // {
+        //   actionName: "Explore resource library",
+        //   actionLink: "/resources",
+        // },
         {
           actionName: "Layer5 in the news",
           actionLink: "/news",
@@ -206,7 +314,7 @@ const Data = {
         {
           actionName: "Recent announcements",
           actionLink: "/blog/category/announcements"
-        }
+        },
       ],
       // div1: {
       //     src: img1,

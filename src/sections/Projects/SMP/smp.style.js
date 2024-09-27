@@ -1,15 +1,10 @@
 import styled from "styled-components";
-import smp_bg from "./smp-hero.png";
-import callout from "./callout.png";
-import cncfIcon from "./cncf-icon.png";
+import cncf from "../../../assets/images/smp-page/cncf-icon.webp";
 
 const SMPWrapper = styled.section`
+    margin-bottom: 3.25rem;
     .smp-hero{
-        background-image: url(${smp_bg});
         height: 34.4rem;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
         .hero-text{
             padding: 9.375rem 0 6.25rem 0;
             h1{
@@ -22,6 +17,7 @@ const SMPWrapper = styled.section`
             .logo-img{
                 height: 240px;
                 width: auto;
+                marginRight: 100px;
             }
         }
     }
@@ -32,7 +28,10 @@ const SMPWrapper = styled.section`
             margin: auto;
             text-align: center;
             width: 80%;
-            margin-bottom: 6.25rem;
+            margin-bottom: 1.25rem;
+        }
+        h3 {
+            margin-bottom: 4.25rem;
         }
         h1{
             margin-bottom: 1.875rem;
@@ -88,7 +87,7 @@ const SMPWrapper = styled.section`
     }
     
     .smp-effects{
-        background-image: url(${cncfIcon});
+        background-image: url("${cncf}");
         background-repeat: no-repeat;
         background-position:right top;
         padding-top:3rem;
@@ -117,12 +116,10 @@ const SMPWrapper = styled.section`
     }
     .join-community{
         width: 100%;
-        max-width:100%;
         margin-bottom: 0;
         display: flex;
         justify-content: center;
         align-content: center;
-        height: 40rem;
     }
     .join-community_text-and_button{
         width:100%;
@@ -130,7 +127,7 @@ const SMPWrapper = styled.section`
         justify-content: center;
         align-items:center;
         flex-direction:column;
-        top:0rem;
+        top: 6.5rem;
         h1{
             color: white;
         }
@@ -142,9 +139,10 @@ const SMPWrapper = styled.section`
         button{
             margin-top: 1.5rem;
         }
-
     }
-
+    rect {
+        fill:  ${props => props.theme.grey313131ToYellowFFF7D8};  
+      }
     @media only screen and (max-width: 1024px) {
         .smp-hero{
             .hero-text{
@@ -155,7 +153,7 @@ const SMPWrapper = styled.section`
             }
         }
         .smp-effects{
-            background-image: url(${cncfIcon});
+            background-image: url("${cncf}");
             background-repeat: no-repeat;
             background-position:right top;
             padding-top:1rem;
@@ -174,7 +172,7 @@ const SMPWrapper = styled.section`
     }
     @media only screen and (min-width: 993px) and  (max-width: 1024px) {
         .smp-effects{
-            background-image: url(${cncfIcon});
+            background-image: url("${cncf}");
             background-repeat: no-repeat;
             background-position:right top;
             padding-top:1rem;
@@ -192,7 +190,7 @@ const SMPWrapper = styled.section`
             .hero-text{
                 padding: 3.125rem 0;
                 .logo-img{
-                    height: 80px;
+                    height: 120px;
                 }
             }
         }

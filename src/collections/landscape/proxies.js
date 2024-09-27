@@ -1,4 +1,4 @@
-export const proxies=[
+export const proxies = [
   {
     name: "A10 Lightning ADC",
     link: "https://www.a10networks.com/products/lightning-adc/",
@@ -32,6 +32,11 @@ export const proxies=[
     name: "MOSN",
     link: "https://github.com/mosn/mosn",
     desc: "MOSN is a cloud-native proxy for edge or service mesh."
+  },
+  {
+    name: "Pipy",
+    link: "https://flomesh.io/pipy",
+    desc: "Pipy is a programmable network proxy for the cloud, edge and IoT. "
   },
   {
     name: "Traefik",

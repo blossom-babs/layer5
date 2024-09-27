@@ -1,4 +1,4 @@
-import React from "react"; 
+import React from "react";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import SectionTitle  from "../../../reusecore/SectionTitle";
@@ -14,11 +14,11 @@ import {
   CloseIcon
 } from "../../../reusecore/Accordion";
 
-import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
-import FaqImage from "../../../assets/images/hosting/hosting/faq.png";
-import particle1 from "../../../assets/images/app/particle/07.png";
-import particle2 from "../../../assets/images/app/particle/08.png";
+import FaqImage from "../../../assets/images/hosting/hosting/faq.webp";
+import particle1 from "../../../assets/images/app/particle/07.webp";
+import particle2 from "../../../assets/images/app/particle/08.webp";
 
 import data from "../../../assets/data/faq";
 
@@ -47,17 +47,17 @@ const Faq = () => {
                 <span>Easy and perfect solution </span> for this app
               </h2>
             </SectionTitle>
-            <Accordion>
+            <Accordion allowZeroExpanded={true} allowMultipleExpanded={false}>
               {data.faqs.map((faq, index) => (
                 <AccordionItem key={index}>
                   <AccordionTitle>
                     <h5>{faq.title}</h5>
                     <IconWrapper>
                       <OpenIcon>
-                        <IoIosArrowForward />
+                        {/* <IoIosArrowForward /> */}
                       </OpenIcon>
                       <CloseIcon>
-                        <IoIosArrowDown />
+                        {/* <IoIosArrowDown /> */}
                       </CloseIcon>
                     </IconWrapper>
                   </AccordionTitle>

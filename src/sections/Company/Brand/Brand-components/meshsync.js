@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.png";
-import MeshSync from "../../../../assets/images/meshsync/meshsync.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import MeshSyncLight from "../../../../assets/images/meshsync/meshsync-light.webp";
+import MeshSync from "../../../../assets/images/meshsync/meshsync.webp";
 
 const MeshSyncWrapper = styled.section`
     .sub-project {
@@ -44,9 +44,9 @@ const MeshSyncBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
             Logos
-            </h3>
+            </h2>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
@@ -61,9 +61,9 @@ const MeshSyncBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
                             Colors
-            </h3>
+            </h2>
           </Col>
           <Col>
             <p>

@@ -2,11 +2,6 @@ import React from "react";
 import { Container, Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import { LandscapePageWrapper } from "./LandscapeGrid.style";
-import Categories from "./categories";
-import NonFunctional from "./non-functional";
-import Functional from "./functional";
-import SMI_Compatibility from "./smi";
-import Tools from "./tools";
 import Subscribe from "../../sections/subscribe/subscribe";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
@@ -21,16 +16,25 @@ import halfMark from "../../assets/images/landscape/half.svg";
 import passingMark from "../../assets/images/landscape/passing.svg";
 import failingMark from "../../assets/images/landscape/failing.svg";
 import Button from "../../reusecore/Button";
+import Categories from "./categories";
+import NonFunctional from "./non-functional";
+import Functional from "./functional";
+import SMI_Compatibility from "./smi";
+import Tools from "./tools";
+import "regenerator-runtime/runtime";
+import useHasMounted from "../../utils/useHasMounted";
 
+const LandscapeGrid = () => {
 
-const LandscapeGrid=() => {
+  const hasMounted = useHasMounted();
+
   return (
     <LandscapePageWrapper>
       <PageHeader title="The Service Mesh Landscape" path="Landscape" />
       <div className="landscape-page-wrapper">
         <Container>
           <div>
-            <Row>
+            <Row Hcenter>
               <h2 id="service-mesh-comparison-strength" className="sub-heading landscape-section-heading">
                                 Comparison of Service Mesh Strengths
               </h2>
@@ -83,30 +87,32 @@ const LandscapeGrid=() => {
               <h2 className="sub-heading landscape-section-heading">
                                 Service Mesh Timeline
               </h2>
-              <ServiceMeshTimeline />
+              <ServiceMeshTimeline  />
               <h2 id="service-mesh-comaprison-matrix" className="sub-heading landscape-section-heading">
                                 Service Mesh Comparison Matrix
               </h2>
-              <Tabs className="landscape-table">
-                <TabList>
-                  <Tab>Categories</Tab>
-                  <Tab>Non-Functional</Tab>
-                  <Tab>Functional</Tab>
-                  <Tab>Tools</Tab>
-                </TabList>
-                <TabPanel>
-                  <Categories />
-                </TabPanel>
-                <TabPanel>
-                  <NonFunctional />
-                </TabPanel>
-                <TabPanel>
-                  <Functional />
-                </TabPanel>
-                <TabPanel>
-                  <Tools />
-                </TabPanel>
-              </Tabs>
+              {hasMounted ?
+                <Tabs defaultIndex={2} className="landscape-table">
+                  <TabList>
+                    <Tab>Categories</Tab>
+                    <Tab>Non-Functional</Tab>
+                    <Tab>Functional</Tab>
+                    <Tab>Tools</Tab>
+                  </TabList>
+                  <TabPanel>
+                    <Categories />
+                  </TabPanel>
+                  <TabPanel>
+                    <NonFunctional />
+                  </TabPanel>
+                  <TabPanel>
+                    <Functional />
+                  </TabPanel>
+                  <TabPanel>
+                    <Tools />
+                  </TabPanel>
+                </Tabs>
+                : ""}
               <h2 id="smi" className="sub-heading landscape-section-heading" >Service Mesh Interface Compliance</h2>
               <h4 className="landscape-section-sub-heading">Is your service mesh compliant? <a href="/projects/service-mesh-interface-conformance">Find out</a>.</h4>
               <SMI_Compatibility/>
@@ -135,7 +141,7 @@ const LandscapeGrid=() => {
                                     and non-functional details.
                   </p>
                   <p className="text-gray">Found a discrepancy, missing or out-dated information?</p>
-                  <Button primary url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" external="true">
+                  <Button primary url="https://github.com/layer5io/layer5/issues/new?assignees=&labels=area%2Flandscape&template=landscape.md&title=%5BLandscape%5D" external={true}>
                                         Let Us Know
                   </Button>
                 </div>

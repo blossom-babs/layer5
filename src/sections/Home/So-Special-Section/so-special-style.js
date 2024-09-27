@@ -6,6 +6,9 @@ const SoSpecialWrapper = styled.div`
     justify-content: space-around;
     align-items:center;
     padding:0 3rem 2rem 3rem;
+    Button:hover{
+        box-shadow: none;
+    }
     .slick-list .slick-track{
         width:5000px;
     }
@@ -19,9 +22,36 @@ const SoSpecialWrapper = styled.div`
         margin-bottom: 3rem;
     }
     
-    .slick-arrow::before{
-        color:black;
-        font-size:22px;
+    .slick-next{
+        right: -2.5rem;
+    }
+
+    .slick-prev{
+        left: -2.5rem;
+    }
+
+    @media screen and (max-width: 992px) {
+        .slick-list{
+            margin: 0;	
+        }
+    }
+
+    .slick-arrow{
+        width: 2rem;
+        height: 3rem;
+    }	
+    .slick-arrow:before{	
+        color: ${props => props.theme.primaryColor};
+        font-size: 4.5rem;
+        display: inline-block;
+        height: 2rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+    .slick-disabled {
+        pointer-events:none;
+    }
+    .slick-arrow:hover:before{	
+        color: ${props => props.theme.secondaryColor};
     }
     .slick-slider{
         .slick-inside-div{
@@ -35,12 +65,31 @@ const SoSpecialWrapper = styled.div`
             height:100%;
         }    
     }
+    
+    .slick-prev:before{	
+        content: "‹";
+        line-height: 0;	
+    }
+    .slick-next:before{	
+        content: "›";
+        line-height: 0;
+    }
+    .slick-dots li button:before {
+        font-size: 0.6rem;
+        color: ${props => props.theme.secondaryColor};
+    }
+    .slick-dots li.slick-active button:before {
+        opacity: 1;
+        color: ${props => props.theme.secondaryColor};
+    }
+    }
     .so-special-head{
         padding:2rem;
         text-align:center; 
-        h4{
-            color:#b3b3b3;
+        p{
+            color:#5e5e5e;
             padding:2rem 0;
+            font-size: 1.5rem;
         }
     }
     #special-cont{
@@ -49,13 +98,16 @@ const SoSpecialWrapper = styled.div`
         text-align:center;
         width:100%;
         border-radius:1rem;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        background-color: ${props => props.theme.grey212121ToWhite};
+        box-shadow:0 2px ${(props) => props.theme.projectPageShadowsize} ${(props) => props.theme.green00D3A9ToBlackFour};
+        color:${(props) => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     #special-cont_img{
         height:70%;
         width:100%;
         overflow:hidden;
-          .gatsby-image-wrapper{
+          .gatsby-image-wrapper, .old-gatsby-image-wrapper{
               height:100%;
           }
           img{
@@ -81,24 +133,27 @@ const SoSpecialWrapper = styled.div`
         }
     }
     .special-cont_btn{
-        background-color:white;
+        background-color:${(props) => props.theme.body};
         color:black;
-        height:100%;
+        height: 30rem;
         outline:none;
-        border:none;   
+        border:none;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
-    .special-cont_btn:hover{
-        background-color:white;
-        color:black;
-    }
+
     .so-special-foot{
         text-align:center;
+        p{
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
         .so-special-foot-btn
         {
-            color:white;
+            color: black;
             margin:2rem;
             :hover{
-                color:black;
+                color: white;
+                box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
             }
         }
     }
@@ -145,12 +200,6 @@ const SoSpecialWrapper = styled.div`
         .so-special-head{
             padding:1rem;
             text-align:center;  
-        }
-         .slick-prev{
-            left:-20px;
-        }
-        .slick-next{
-            right:-20px;
         }
         .special-cont_para{
             padding:1rem 0;

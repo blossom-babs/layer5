@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import BookmarkImage from "./bookmarks.jpg";
 
 const CommunitySectionWrapper = styled.div`
     margin-bottom: 3.25rem;
@@ -11,11 +10,12 @@ const CommunitySectionWrapper = styled.div`
         justify-content: center;
         align-items: center;
         text-align: center;
-        background: url(${BookmarkImage});
-        background-size: cover;
-        background-position: center;
-        h1,h3{
+        h1,h2{
             color: white;
+        }
+        h2{
+            font-size: 1.75rem;
+            font-weight: 500;
         }
     }
 
@@ -31,6 +31,7 @@ const CommunitySectionWrapper = styled.div`
             @media (max-width: 62rem) {
                 line-height: 2.5rem;
             }
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);  
         }
 
         img{
@@ -61,6 +62,7 @@ const CommunitySectionWrapper = styled.div`
         margin-top: 2rem;
         color: white;
         background: linear-gradient(to right, ${props => props.theme.secondaryColor} 50%, ${props => props.theme.black} 50%);
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         @media (max-width: 991px) {
             background: linear-gradient(to bottom, ${props => props.theme.secondaryColor} 42rem, ${props => props.theme.black} 42rem);
         }
@@ -109,28 +111,51 @@ const CommunitySectionWrapper = styled.div`
     .meshmate{
         margin-top: 5rem;
         .content{
+            h1, h3, h4 {
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
             h3{
                 margin: 0.5rem auto 0.5rem auto;
             }
-            h1{
+            h4{
                 margin: 1rem auto 1rem auto;
+            }
+            h1.onboarding{
+                margin: 0.5rem auto 0.5rem auto;
+                font-size: 1.75rem;
+                font-weight: 500;
             }
             @media (max-width: 62rem) {
               text-align:center;
             }
         }
-        img{
-            max-height: 25rem;
+        .meshmate-img{
+            max-width: 25rem;
             display:block;
             margin: auto;
             background-color: ${props => props.theme.secondaryLightColorTwo};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
+
+        .meshmate-img-transparent {
+            background-color: transparent;
+        }
+
+        svg {
+            max-width: 25rem;
+            .meshmate-stack-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGreen3C494F};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+          }
+
         .meshmate-link{
             background-color: ${props => props.theme.secondaryLightColorTwo};
             padding-bottom: 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             .icon{
                 align-items: center;
                 width: 40px;
@@ -151,15 +176,19 @@ const CommunitySectionWrapper = styled.div`
               display: flex;
               margin: auto;
             }
+            h2 {
+                font-size: 1.75rem;
+                font-weight: 500;
+            }
 
             @media (max-width: 36rem) {
-               h3{
+               h4{
                   font-size: 18px;
                }
             }
 
             &:hover{
-                h3{
+                h4{
                     color: ${props => props.theme.primaryLightColorTwo};
                 }
                 .icon{
@@ -169,14 +198,21 @@ const CommunitySectionWrapper = styled.div`
                 }
             }
         }
+
+        .meshmate-link-transparent {
+            background-color: transparent;
+        }
     }
 
     .newcomers-section {
-        background: ${props => props.theme.secondaryLightColor};
         width:100%;
         margin: 5rem 0;
         padding: 2rem 0;
         .text{
+            h2{
+                font-size: 1.75rem;
+                font-weight: 500;
+            }
             text-align: center;
         }
         h4{
@@ -196,6 +232,10 @@ const CommunitySectionWrapper = styled.div`
         }
         .invitation {
             margin: 2rem 0rem 2rem 0rem;
+            a {
+                font-weight: 600;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
         }
     }
 
@@ -204,6 +244,19 @@ const CommunitySectionWrapper = styled.div`
             .text {
                 margin-top: 1.5rem;
             }
+        }
+    }
+
+    .Callout {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+
+        @media screen and (min-width: 768px) {
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: flex-start; 
+            gap: 2rem; 
         }
     }
 

@@ -1,25 +1,17 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
-import Layout from "../../components/layout";
-import SEO from "../../components/seo";
-import Navigation from "../../sections/General/Navigation";
-import WorkshopsPage from "../../sections/Learn/Workshop-grid";
-import Footer from "../../sections/General/Footer";
-import { GlobalStyle } from "../../sections/app.style";
-import theme from "../../theme/app/themeStyles";
 
+import SEO from "../../components/seo";
+import WorkshopsPage from "../../sections/Learn/Workshop-grid";
 
 const WorkshopsGridPage = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <GlobalStyle />
-        <SEO title="Service Mesh Workshops" description="Service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh" />
-        <Navigation />
-        <WorkshopsPage />
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+    <>
+      <WorkshopsPage />
+
+    </>
   );
 };
 export default WorkshopsGridPage;
+export const Head = () => {
+  return <SEO title="Service Mesh Workshops" description="Service mesh workshops and tutorials for Istio, Envoy, Linkerd, Consul, App Mesh, Open Service Mesh, Cilium, Kuma, NGINX" />;
+};

@@ -1,48 +1,40 @@
 import styled from "styled-components";
 
+import HeroCubesBlack from "./assets/images/mesh_cubes_black.svg";
+
 const Banner3SectionWrapper = styled.section`
+    display: none;
     padding: 7rem 0;
-    .background-svg {
-        overflow: visible;
-        position: absolute;
-        right: 0px;
-        top: -10%;
-        width: 25%;
-        min-height: 150%;
-    }
+    background: url(${HeroCubesBlack}) no-repeat;
+    background-size: 50%;
+    background-color: ${props => props.theme.secondaryLightColorTwo};
+    background-position: bottom -85px right;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     p {
         font-size: 21px;
-        font-weight: 300;
-        color: ${props => props.theme.primaryColor};
+        font-weight: 300; 
+        color: ${props => props.theme.greyDEE3DEToGreen3C494F};
         margin: 0 0 70px 0;
-        text-align: center;
+        width: 70%;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    .section-title-wrapper {
-        min-width: 80%;
-        margin: auto;
+    h4 {
+        color: ${props => props.theme.grey737373ToGreyB3B3B3};
+        text-transform: uppercase;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .section-title{
-        text-align: center;
         h1 {
+            font-weight: 400;
             font-size: 60px;
             line-height: 4.3rem;
+            margin: 0 0 38px 0; 
             span {
                 font-weight: 700;
                 color: ${props => props.theme.secondaryColor};
             }
         }
-        h2 {
-            margin: 0 0 20px 0;
-            span {
-                color: ${props => props.theme.secondaryColor};
-            }
-        }
-    }
-    .vintage-box-container {
-        display: flex;
-    }
-    .vintage-box {
-        margin: auto;
     }
     .banner-btn {
         margin: 0rem .5rem 0 .5rem;
@@ -69,52 +61,37 @@ const Banner3SectionWrapper = styled.section`
         padding: 4rem 0;
         .section-title { 
             h1 {
-                font-size: 3rem;
-                line-height: 3.5rem;
+                font-size: 2.25rem;
+                line-height: 2.4rem;
                 margin: 0 0 1rem 0;
             }
-            h2 {
-                font-size: 2rem;
-            }
         }
         p {
-            font-size: 1.5rem;
-        }
-    }
-    @media only screen and (max-width: 992px) {
-        padding: 3rem 0;
-        .section-title { 
-            h1 {
-                font-size: 2.7rem;
-                line-height: 2.7rem;
-            }
-            h2 {
-                font-size: 2rem;
-            }
-        }
-        p {
-            font-size: 1.5rem;
+            width: 80%;
         }
     }
     @media only screen and (max-width: 912px) {
         padding: 3rem 0;
+        background-size: 45%;
+
         p {
             width: 100%;
         }
         
         .section-title {
             h1 {
-                font-size: 2.5rem;
-                line-height: 2.7rem;
+                font-size: 2.25rem;
+                line-height: 2.4rem;
                 margin: 0 0 1rem 0;
             }
-            h2 {
-                font-size: 2rem;
+            h4 {
+                font-size: 1rem;
             }
         }
         p { 
             font-size: 1.25rem;
             margin: 2rem 0rem;
+            padding-right: 4rem;
         }
         .banner-btn {
             min-width: 140px;
@@ -124,83 +101,67 @@ const Banner3SectionWrapper = styled.section`
         } 
      }
      @media only screen and (max-width: 760px) {
+        background-position: bottom -8px right -60px;
         padding: 2rem 0;
-        .section-title-wrapper {
-            min-width: 100%;
-        }
+        background-size: 45%;
+ 
         .section-title { 
-            h1 { 
-                margin: 0rem;
-                font-size: 2rem;
-            }
-            h2 {
-                font-size: 1.5rem;
-            }
-        }
-        p {
-            font-size: 1.2rem;
+            h1 { margin: 0rem; }
         }
         .vintage-box{
              &:before{
-                content: none;
-            }
-        }
-    }
-    @media only screen and (max-width: 480px) {
+                 content: none;
+             }
+         }
+     }
+     @media only screen and (max-width: 480px) {
+        background-position: bottom 110px right -60px;
         padding: 2rem 0;
-        .vintage-box{
-            &:before{
-                content: none;
-            }
-        }
-	}
-    @media only screen and (max-width: 430px) {
-        padding: 2rem 0;
-        .section-title { 
-            h1 { 
-                margin: 0rem;
-                font-size: 1.8rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-        }
-        p {
-            margin: 1rem 0;
-            font-size: 1.1rem;
-        }
-        .vintage-box{
-            &:before{
-                content: none;
-            }
-        }
-	}
-    @media screen and (max-width: 402px) {
-        .banner-btn.one, .banner-btn.two {
-            margin: 0 0.5rem 1rem;
-        }
-    }
-     @media only screen and (max-width: 380px) {
+        
         .section-title{
             h1 {
-                font-size: 1.6rem;
-                line-height: 1.7rem;
-                /* margin: 0 0 30px 0; */
-            }
-            h2 {
-                font-size: 1.3rem;
+                font-size: 35px;
+                line-height: 50px;
             }
         }
-        p {
-            font-size: 1rem;
+         .vintage-box{
+             &:before{
+                 content: none;
+             }
+         }
+         p { 
+            padding-right: 9rem;
         }
-        .banner-btn{
+		 }
+		 @media screen and (max-width: 402px) {
+			.banner-btn.one, .banner-btn.two 
+			{
+				margin: 0 0.5rem 1rem;
+			}
+		 }
+     @media only screen and (max-width: 380px) {
+        background-position: bottom 170px right -20px;
+        .vintage-box {
+            padding-right: 1rem;
+        }
+        .section-title{
+            h1 {
+                font-size: 30px;
+                line-height: 46px;
+                margin: 0 0 30px 0;
+            }
+            h4 {
+                font-size: 15px;
+            }
+        }
+        /* .banner-btn{
             font-size: 14px;
             min-width: 127px;
             padding: 14px 12px; 
-        }
+        } */
      }
      @media only screen and (max-width: 330px) {
+        background-position: bottom 200px right -10px;
         .section-title{
             h1 {
                 font-size: 23px;

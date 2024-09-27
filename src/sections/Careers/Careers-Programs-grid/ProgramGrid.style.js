@@ -2,7 +2,10 @@ import styled from "styled-components";
 export const ProgramsPageWrapper = styled.div`
     
     margin-top: -2rem;
-
+    h1{
+        color: ${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
     .programs-page-wrapper{
         margin: 4rem 0;
 
@@ -17,14 +20,15 @@ export const ProgramsPageWrapper = styled.div`
         h5{
             font-size: 1.1rem; 
             font-weight: 600;
-            color: black;
+            color: ${props => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
 
     .icon{
         height: 12rem;
         width: 12rem;
-        margin: 0 auto 1.5rem auto;
+        margin: 0.7rem auto 1.5rem auto;
         position: relative;
         
         img{
@@ -44,12 +48,12 @@ export const ProgramsPageWrapper = styled.div`
         height: 18rem;
         width: 20rem;
         padding: 5px;
+        color: ${props => props.theme.text};
         margin: auto;
-        background: rgba(247,247,247,1);
+        background: ${props => props.theme.whiteOneToGreyF0F0F0};
         justify-content: center;
         border-radius: 1rem;
-        transition: all 0.2s;
-        transition-timing-function: ease-in-out;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         
         &:hover{
             box-shadow: 0px 4px 20px 2px ${props => props.theme.shadowLightColor};

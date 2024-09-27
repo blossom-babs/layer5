@@ -9,13 +9,15 @@ const L404SectionWrapper = styled.section`
     h1.message {
         font-size: 2rem;
         line-height: 2rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
-    h3.subtitle {      
+    h2.subtitle {      
         font-weight: 400;       
         font-size: 1.5rem;
-        color: gray;
+        color: ${props => props.theme.greyDEE3DEToGrey363636};
         font-style: italic;
         margin-top: 2.5rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .button-row{
         display: flex;
@@ -32,6 +34,7 @@ const L404SectionWrapper = styled.section`
         
         button{
             margin-top: 2.5rem;
+            color: black;
         }
     }
 `;

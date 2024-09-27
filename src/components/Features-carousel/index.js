@@ -1,15 +1,15 @@
-import React, {useState} from "react";
-import {SRLWrapper} from "simple-react-lightbox";
-import {Link} from "gatsby";
-import Carousel from "nuka-carousel";
-import { IoIosArrowRoundForward } from "react-icons/io";
-import {FeaturesWrapper} from "./FeaturesCarousel.style";
+import React, { useState } from "react";
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox";
+import { Link } from "gatsby";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
+import { FeaturesWrapper } from "./FeaturesCarousel.style";
+import Slider from "react-slick";
 
 
-const Features = ({features}) => (
+const Features = ({ features, heading }) => (
   <>
     {/* carousel rendered at smaller breakpoints */}
-    <FeaturesCarousel features={features} />
+    <FeaturesCarousel features={features} heading={heading} />
     <FeaturesList features={features} />
   </>
 );
@@ -17,7 +17,7 @@ const Features = ({features}) => (
 
 const FeaturesList = ({ features }) => {
   const [activeFeature, setActiveFeature] = useState(0);
-  return(
+  return (
     <FeaturesWrapper>
       <div className="features">
         <ul className="options">
@@ -35,40 +35,35 @@ const FeaturesList = ({ features }) => {
           ))}
         </ul>
         <div className="terminal-wrapper">
-          <SRLWrapper>
-            {features[activeFeature].content}
-          </SRLWrapper>
+          <SimpleReactLightbox>
+            <SRLWrapper>
+              {features[activeFeature].content}
+            </SRLWrapper>
+          </SimpleReactLightbox>
         </div>
       </div>
     </FeaturesWrapper>
   );
 };
 
-const FeaturesCarousel = ({ features }) => {
-  return(
+const FeaturesCarousel = ({ features, heading }) => {
+  return (
     <FeaturesWrapper>
       <div className="features-carousel">
-        <h2 className="main-heading">Features</h2>
-        <Carousel
-          renderCenterRightControls={() => null}
-          renderCenterLeftControls={() => null}
-          wrapAround
-          defaultControlsConfig={{
-            pagingDotsContainerClassName: "pagingDots",
-          }}
-          cellSpacing={40}
-          getControlsContainerStyles={(key) => {
-            switch (key) {
-              case "BottomCenter":
-                return {
-                  top: 0,
-                };
-            }
-          }}
+        <h2 className="main-heading">{heading ? heading : "Features"}</h2>
+        <Slider
+          autoplay={true}
+          autoplaySpeed={3500}
+          arrows={false}
+          dots={true}
+          infinite= {true}
+          speed="500"
+          slidesToShow={1}
+          slidesToScroll={1}
         >
           {features.map((feature, stableIdx) => (
             <div key={stableIdx}>
-              <Feature Element="div" id={stableIdx} title={feature.title} active>
+              <Feature Element="div" id={feature.id} title={feature.title} active>
                 {feature.description}
               </Feature>
               <div className="terminal-wrapper">
@@ -76,14 +71,14 @@ const FeaturesCarousel = ({ features }) => {
               </div>
             </div>
           ))}
-        </Carousel>
+        </Slider>
       </div>
     </FeaturesWrapper>
   );
 };
 
-const Feature = ({children, title, active, onClick, learnMoreLink, id, Element = "li"}) => {
-  return(
+const Feature = ({ children, title, active, onClick, learnMoreLink, id, Element = "li" }) => {
+  return (
     <Element className={active ? "feature active-feature" : "feature"}>
       {onClick ? (
         <button
@@ -97,13 +92,16 @@ const Feature = ({children, title, active, onClick, learnMoreLink, id, Element =
       ) : (
         <span className="heading">{title}</span>
       )}
-      <div className="body" id={`feature-${id}`} aria-hidden={!active}>
+      <div className="body" id={`feature-${id}`} >
         <p>{children}</p>
-        {learnMoreLink && (
-          <Link className="learn-more-link" to={learnMoreLink}>
-                        Learn more <IoIosArrowRoundForward />
+        {learnMoreLink && learnMoreLink.startsWith("/")
+          ? <Link className="learn-more-link" to={learnMoreLink}>
+            Explore <IoIosArrowRoundForward />
           </Link>
-        )}
+          : <a href={learnMoreLink} className="learn-more-link">
+           Explore <IoIosArrowRoundForward />
+          </a>
+        }
       </div>
     </Element>
   );

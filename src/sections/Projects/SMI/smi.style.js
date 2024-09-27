@@ -4,23 +4,22 @@ const SMIWrapper = styled.section`
     .description{
         margin: 6.5rem auto 4rem;
         h4{
-          
             color: ${props => props.theme.tertiaryColor};;
             font-weight: ;
             border: 1px solid gray;
             padding: 0 0.625rem 0 0.625rem;
             width: fit-content;
-            
-            
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         h1{
             margin-bottom: 1.56rem;
         }
         p{
-            color: ${props => props.theme.tertiaryColor};;
+            color: ${props => props.theme.text};
             opacity: 70%;
             margin-bottom: 1.875rem;
             font-weight: 400;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
         .desc-p{
             width: 80%;
@@ -32,14 +31,16 @@ const SMIWrapper = styled.section`
             margin-bottom: 2.5rem;
             p{
                 font-size: 21px;
-                color: black;
+                color: ${props => props.theme.text};
                 opacity: 70%;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
     }
     .logo{
         position: absolute;
         top: -6.25rem;
+        filter: invert(${props => props.theme.meshInterfaceLogoFilter});
         left: -7.5rem;
     }
     .feature {
@@ -49,7 +50,7 @@ const SMIWrapper = styled.section`
         .hero_img_col {
             position: absolute;
             right: 0;
-            overflow: hidden;
+            // overflow: hidden;
         }
         .description {
             margin: 6.5rem auto 15rem;
@@ -59,7 +60,7 @@ const SMIWrapper = styled.section`
         }
     }
     .hero-img{
-        width: 36rem;
+        max-width: 100%;
     }
     .feature-table{
         margin: 0 5rem 1.875rem 5rem;
@@ -71,14 +72,15 @@ const SMIWrapper = styled.section`
     .feature-block{
         padding: 2.5rem 1.875rem 2.8rem 1.875rem;
         border-radius: 20px;
-        box-shadow: 0 0 15px 5px ${props => props.theme.shadowColor};
+        box-shadow: 0 0 ${props => props.theme.projectPageShadowsize} 5px ${props => props.theme.green00D3A9ToGreyE6E6E6};
         position: relative;
-        transition: all 0.3s ease-in;
-        background-color: white;
+        background-color: ${props => props.theme.grey212121ToWhite};
         z-index: 999;
         height: 100%;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         &:hover{
-            border-color: ${props => props.theme.primaryColor};
+            border-color: ${props => props.theme.green00D3A9ToGreyE6E6E6};
             .thumb-block{
                 border-color: ${props => props.theme.primaryColor};
             }
@@ -90,24 +92,27 @@ const SMIWrapper = styled.section`
             font-size: 34px;
             font-weight: 700;
             margin: 0 0 3.125rem 0.625rem; 
-            color: ${props => props.theme.black};
+            color: ${props => props.theme.text};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
     .section-3{
-        background-color: #FAFAFA;
+        background-color: ${props => props.theme.grey1D1D1DToGreyFAFAFA};
         width: 100%;
         padding:7rem 0rem;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     .bg{
         height: 20rem;
         width: 90%;
         max-width: 73.75rem;
         margin: 20rem auto 0 auto;
-        background-color: #EBFCF8;
+        background-color: ${props => props.theme.grey141714ToGreenEBFCF8};
         position: absolute;
         z-index: 1;
         left: 0;
         right: 0;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
 
     @media screen and (max-width: 1200px) {
@@ -147,13 +152,15 @@ const SMIWrapper = styled.section`
         }
     }
     .card{
-        background-color: white;
+        background-color: ${props => props.theme.grey212121ToWhite};
         width: 70%;
         max-width: 62.5rem;
         margin: auto;
         padding: 2.5rem 4.7rem 2rem 4.7rem;
         border: 1px white;
         border-radius: 20px;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
         h2{
             margin-bottom: 1.875rem;
         }
@@ -200,10 +207,13 @@ const SMIWrapper = styled.section`
 		bottom: 0px;
 		padding: 1.25rem;
 		&:hover {
-			background-color: ${props => props.theme.tertiaryColor};
+			background-color: #1e2117;
 			border-top-left-radius: .5rem;
 			border-top-right-radius: .5rem;
 		}
+	}
+    .react-tabs__tab:focus:after{
+		content: none;
 	}
 	.react-tabs__tab-list {
 		margin: 0px;
@@ -217,8 +227,8 @@ const SMIWrapper = styled.section`
 		background: #00B39F;
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.tertiaryColor};
-		border-color: ${props => props.theme.tertiaryColor};
+		background: #1e2117;
+		border-color: #1e2117;
 		color: white;
 		font-weight: 600;
 	}
@@ -231,6 +241,7 @@ const SMIWrapper = styled.section`
 
 		a { 
 			color: ${props => props.theme.tertiaryColor};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	
 			&:hover {
 				color: ${props => props.theme.secondaryColor};

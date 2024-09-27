@@ -1,4 +1,4 @@
-export const clients=[
+export const clients = [
   {
     name: "Akka",
     link: "https://akka.io",
@@ -33,5 +33,15 @@ export const clients=[
     name: "DropWizard",
     link: "https://www.dropwizard.io/en/stable/",
     desc: "Dropwizard pulls together stable, mature libraries from the Java ecosystem into a simple, light-weight package that lets you focus on getting things done."
+  },
+  {
+    name: "go-zero",
+    link: "https://go-zero.dev/en/",
+    desc: "go-zero is a web and rpc framework written in Go. It's born to ensure the stability of the busy sites with resilient design. Builtin goctl greatly improves the development productivity."
+  },
+  {
+    name: "Nasp",
+    link: "https://github.com/cisco-open/nasp/",
+    desc: "Nasp is an open-source, lightweight library to expand service mesh capabilities to non-cloud environments by getting rid of the complexity of operating dedicated network proxies."
   }
 ];

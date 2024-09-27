@@ -1,12 +1,15 @@
 import React from "react";
+import { StaticImage } from "gatsby-plugin-image";
 import { Container } from "../../reusecore/Layout";
 import { Row } from "../../reusecore/Layout";
 import PageHeader from "../../reusecore/PageHeader";
 import InternshipPage from "./Careers-Internship-grid";
-import Lee_and_Rigs from "../../assets/images/careers/Lee-and-Rigs-Caballero-of-Google.jpeg";
-import Lee_giveaway from "../../assets/images/careers/Lee-giving-away-free-t-shirts-at-UT-Austin.jpeg";
+import Five from "../../sections/Community/Community-pictures/community.png";
 import JoinCommunity from "../Community/Join-community";
 import CareersSectionWrapper from "./careers.style";
+
+const Five_image = "./img/open-source.png";
+const Layer5_culture = "./img/layer5-culture.png";
 
 const CareersPage = () => {
   return (
@@ -27,7 +30,7 @@ const CareersPage = () => {
             </p>
           </div>
           <div className="opensource-section-img">
-            <img src={Lee_and_Rigs} alt="Lee-and-Rigs-Caballero-of-Google" />
+            <StaticImage src={Five_image} alt="Five" />
           </div>
         </div>
         <Container>
@@ -35,20 +38,14 @@ const CareersPage = () => {
             <div className="introText">
               <h2>Layer5 Culture</h2>
               <p>All team members <strong>are expected to... </strong>
-              take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.</p>
+                take initiative, execute briskly, debate in the discussion, then execute post-haste on the decision, irrespective of the specific decision.</p>
               <p>All team members <strong>should expect to... </strong>
-              be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.</p>
+                be challenged, to work hard, to play hard, to be recognized, to grow and help others grow.</p>
               <p><strong>You should... </strong>
-              pay attention to detail and take pride in your work. Know when to pri- oritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
+                pay attention to detail and take pride in your work. Know when to prioritize and have the discipline to adhere to those priorities. Focus on the customer. Pay it forward and enable others. Bring solutions with the problems. Take out the trash (do grunt work) as needed.</p>
             </div>
-            <div className="introVideo">
-              <iframe
-                width="392"
-                height="220.5"
-                src="https://www.youtube.com/embed/0yN5T5LB9ps"
-                frameBorder="0"
-                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen />
+            <div className="introImage">
+              <StaticImage src={Layer5_culture} alt="Five holding Layer5 banner" />
             </div>
           </Row>
         </Container>
@@ -56,11 +53,11 @@ const CareersPage = () => {
           <InternshipPage hide_heading={true} />
         </div>
 
-        <JoinCommunity image={Lee_giveaway} />
+        <JoinCommunity image={Five} />
         <Container>
           <br />
           <p className="center">Open source contributors come in all shapes, sizes, colors and so on. All are welcome in the Layer5 projects and community!!</p>
-        
+
           <p className="center">Layer5 goes out of its way to welcome and encourage new contributors. We often assign newcomers an onboarding buddy, a MeshMate, to ensure that newcomers get both introduced to the projects within the community and introduced around to other individuals. We strive to help them get a foothold on a crevice of one of our initiatives, instilling and nurturing a sense of ownership, so that they feel at-home as they become a regular contributor.</p>
           <p className="center">
             We also spend a great deal of time trying to recognize and uplift contributors on the Layer5 and Meshery Twitter accounts whether “contribution” means code or any of the other various forms of being involved int the projects and community. Likewise, we try to lift up contributors’ works on the Layer5 and Meshery LinkedIn pages, too. And, while it’s not a world stage, we openly and publicly share our community meetings on YouTube.

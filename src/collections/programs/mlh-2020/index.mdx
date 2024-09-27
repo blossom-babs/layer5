@@ -1,17 +1,19 @@
 ---
-title: "MLH Fellowship Program"
+title: "MLH Fellowship Program 2020"
 thumbnail: ./mlh.svg
+darkthumbnail: ./mlh-dark.svg
 permalink: "mlh/2020"
+program: "MLH Fellowship Program"
+programSlug: "mlh"
 published: true
 ---
 
 import { ProgramsWrapper } from "../Programs.style.js";
 import Button from "../../../reusecore/Button";
-import mlh_logo from "./mlh.svg";
+import {ReactComponent as MlhLogo} from "./mlh.svg";
 
 <ProgramsWrapper>
-
-<img src={mlh_logo} alt="mlh_logo" />
+<MlhLogo alt="mlh_logo" class="mlh_logo"/>
 <h2><b>MLH Fellowship Program</b></h2>
 <div>
 The Major League Hacking’s <a href="https://fellowship.mlh.io/">MLH Fellowship</a> is an internship alternative for software engineers. Instead of working on a project for just one company, you’ll contribute to Open Source projects that are used by companies around the world. You’ll collaborate with a group of 10 students under the guidance of a professional mentor whose only job is to help you successfully contribute.<br/>
@@ -34,7 +36,7 @@ Layer5’s <a href="https://meshery.io/">Meshery Project</a> is participating in
 <b>Meshery</b>
 <ul>
 <li>
-<b>Description:</b> Meshery is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads. Service mesh operators are in desparate need of visualization of their cloud native infrastructure and workloads. Networking is complex and virtual networking even more complex. Interactive visual topologies of service meshes and their workloads are key to helping developers and operators take the blinders off when creating and running microservices and their infrastructure.
+<b>Description:</b> Meshery is the multi-service mesh management plane offering lifecycle, configuration and performance management of service meshes and their workloads. Service mesh operators are in desperate need of visualization of their cloud native infrastructure and workloads. Networking is complex and virtual networking even more complex. Interactive visual topologies of service meshes and their workloads are key to helping developers and operators take the blinders off when creating and running microservices and their infrastructure.
 </li>
 <li>
 <b>Recommended skills:</b>
@@ -55,6 +57,7 @@ Layer5’s <a href="https://meshery.io/">Meshery Project</a> is participating in
         width="392"
         height="220.5"
         src="https://www.youtube.com/embed/0yN5T5LB9ps"
+        loading="lazy"
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen />
@@ -84,7 +87,7 @@ of Apache v2.
 </p>
 <p>
 The key component of these projects is our Community. This community,
-which you will join as an participant in Google Summer of Code, is
+which you will join as a participant in Google Summer of Code, is
 improving the world of diverse cloud native systems. Your contributions
 will affect people you've never met. The Layer5 community includes
 software engineers, researchers, students, artists, system administrators,
@@ -100,7 +103,7 @@ and strength of our community.
 </p>
 <div id="gsoc-2020" className="apply-button">
     <h3>
-        <Button primary title="Participate" url="http://slack.layer5.io" external="true" />
+        <Button primary title="Participate" url="http://slack.layer5.io" external={ true } />
     </h3>
 </div>
 

@@ -5,6 +5,7 @@ const FeaturesSectionWrapper = styled.section`
 	background-color: black;
 	transform: skew(0deg, -6deg);
 	padding-bottom:5rem;
+	margin-bottom: 10%;
 	.skw{
 		display: grid;
 		position: relative;
@@ -86,8 +87,12 @@ const FeaturesSectionWrapper = styled.section`
 				color: white;
 			}
 		.smp-section-data {
-			h1, h3, p {
+			h1, h2, p {
 				text-align: start; color: white;
+			}
+			h2 {
+				font-size: 1.75rem;
+    			font-weight: 500;
 			}
 		}
 
@@ -121,7 +126,7 @@ const FeaturesSectionWrapper = styled.section`
 						margin: 1rem auto;
 						opacity: 0.6;
 
-						a {
+						p {
 							display: block;
 
 							img {
@@ -131,7 +136,7 @@ const FeaturesSectionWrapper = styled.section`
 						}
 					}
 				}
-				.slick-dots 
+				.slick-dots
 					li.slick-active {
 						opacity: 1;
 					}
@@ -150,7 +155,7 @@ const FeaturesSectionWrapper = styled.section`
 				left: 40rem;
 				width: 6rem;
 
-				li a img {
+				li p img {
 					height: 4rem;
 				}
 			}
@@ -208,7 +213,7 @@ const FeaturesSectionWrapper = styled.section`
 					left: 90%;
 					width: 4rem;
 
-					li a img {
+					li p img {
 						height: 2.5rem;
 					}
 				}
@@ -238,9 +243,10 @@ const FeaturesSectionWrapper = styled.section`
 	}
 
 	.mesh-mngmnt {
-		h4 {
+		h3 {
 			margin: 1rem 0;
 			color: rgba(255, 255, 255, 0.6);
+			font-size: 1.5rem;
 		}
 		p {
 			margin: 0.5rem 0;

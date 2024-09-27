@@ -12,10 +12,10 @@ import {
   CloseIcon
 } from "../../../reusecore/Accordion";
 
-import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
+// import { IoIosArrowForward, IoIosArrowDown } from "react-icons/io";
 
-import particle1 from "../../../assets/images/app/particle/07.png";
-import particle2 from "../../../assets/images/app/particle/08.png";
+import particle1 from "../../../assets/images/app/particle/07.webp";
+import particle2 from "../../../assets/images/app/particle/08.webp";
 
 import data from "../../../assets/data/faq";
 
@@ -34,17 +34,17 @@ const FaqClassic = () => {
         </SectionTitle>
         <Row Vcenter={true}>
           <Col className="faq-content-block" md={8} sm={12} offsetMd={2}>
-            <Accordion>
+            <Accordion allowZeroExpanded={true} allowMultipleExpanded={false}>
               {data.faqs.map((faq, index) => (
                 <AccordionItem key={index}>
                   <AccordionTitle>
                     <h5>{faq.title}</h5>
                     <IconWrapper>
                       <OpenIcon>
-                        <IoIosArrowForward />
+                        {/* <IoIosArrowForward /> */}
                       </OpenIcon>
                       <CloseIcon>
-                        <IoIosArrowDown />
+                        {/* <IoIosArrowDown /> */}
                       </CloseIcon>
                     </IconWrapper>
                   </AccordionTitle>

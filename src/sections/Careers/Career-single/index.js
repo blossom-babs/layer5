@@ -3,19 +3,19 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import PageHeader from "../../../reusecore/PageHeader";
 import CareerPageWrapper from "./CareerSingle.style";
-import { FaPlay } from "react-icons/fa";
-import { FaGlobeAmericas } from "react-icons/fa";
-import { FiCalendar, FiClock } from "react-icons/fi";
-import { HiOutlineCash } from "react-icons/hi";
-import Layer5_Icon from "../../../assets/images/layer5/layer5-only/png/layer5-white-bg.png";
+import { FaPlay } from "@react-icons/all-files/fa/FaPlay";
+import { FaGlobeAmericas } from "@react-icons/all-files/fa/FaGlobeAmericas";
+import { FiCalendar } from "@react-icons/all-files/fi/FiCalendar";
+import { FiClock } from "@react-icons/all-files/fi/FiClock";
+import { HiOutlineCash } from "@react-icons/all-files/hi/HiOutlineCash";
+import { ReactComponent as Logo } from "../../../assets/images/app/layer5-colorMode.svg";
 
-
-const CareerSingle = ({data}) => {
+const CareerSingle = ({ data }) => {
   const { frontmatter, body } = data.mdx;
 
   return (
     <CareerPageWrapper>
-      <PageHeader title={frontmatter.title}/>
+      <PageHeader title={frontmatter.title} />
       <div className="single-post-wrapper">
         <Container>
           <Row className="job-header-row">
@@ -25,7 +25,7 @@ const CareerSingle = ({data}) => {
                   <h5> <FaPlay /> Start Date</h5>
                   <p>{frontmatter.start_date}</p>
                 </Col>
-                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar/> Duration</h5><p>{frontmatter.duration}</p></Col> : "" }
+                {frontmatter.type === "internship" ? <Col xs={6} className="job-details-col"><h5> <FiCalendar /> Duration</h5><p>{frontmatter.duration}</p></Col> : ""}
                 <Col xs={6} className="job-details-col">
                   <h5> <FaGlobeAmericas /> Location</h5>
                   <p>{frontmatter.location}</p>
@@ -42,7 +42,7 @@ const CareerSingle = ({data}) => {
             </Col>
             <Col xs={12} md={5} xl={4} className="logo-col">
               <div className="layer5-logo">
-                <img src={Layer5_Icon} alt="Layer5 Logo"/>
+                <Logo alt="Layer5 logo" />
               </div>
             </Col>
           </Row>

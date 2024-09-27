@@ -1,16 +1,22 @@
 import styled from "styled-components";
 
 const SubscribeWrapper = styled.div`
-    background-color:${props => props.theme.secondaryLightColor};
+    background-color:${props => props.theme.grey1D1D1DToGreyFAFAFA};
     padding: 3.125rem 0.625rem;
     overflow: hidden;
+    transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+
     h2{
         font-weight: 600;
         font-size:1.875rem;
         margin:1.25rem 0;
+        color:${props => props.theme.text};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     h2 span{
-        color:${props => props.theme.secondaryColor};
+        color:${props => props.theme.primaryColor};
+        
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
     }
     
     input{
@@ -30,11 +36,11 @@ const SubscribeWrapper = styled.div`
         
     }
     #mc-embedded-subscribe{
-        margin: 1.5rem 0.3125rem 0;
+        margin: 1.5625rem 0.3125rem 0;
+        background: linear-gradient(123deg, #00b39f 60%, #00b39f 100%);
     }
     #mc-embedded-subscribe:hover{
-        color:black;
-        box-shadow:0 2px 10px rgba(0,0,0,0.4);
+        box-shadow: ${props => props.theme.whiteFourToBlackFour} 0px 2px 10px;
     }
     @media only screen and (max-width: 1050px) {
         .email-cont{
@@ -95,8 +101,17 @@ const SubscribeWrapper = styled.div`
             margin:1.5625rem 0;
             width:100%;
         }
+        .email-cont{
+            justify-content:center;
+            display:flex;
+            align-items:center;
+        }
+        #mc-embedded-subscribe{
+            margin: 0 0.3125rem;
+        }
         .email-cont div{
             padding:0;
+            width:50%;
         }
 
     }

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const LandscapePageWrapper=styled.div`
+export const LandscapePageWrapper = styled.div`
 
 	h2.landscape-section-heading {
 		margin-bottom: 2rem;
@@ -8,14 +8,18 @@ export const LandscapePageWrapper=styled.div`
 		font-weight: 600;
 		text-align: center;
 		font-style:unset;
-		color:#1e2117;
+		color:${props => props.theme.text};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
+
 	#service-mesh-comparison-strength {
-            margin: -2.5rem auto 6rem;
+            margin: -2.5rem 1rem 5rem;
 	}
+
 	.subsequent-heading {
 		padding-top: 6rem;
 	}
+	
 	.landscape-section-sub-heading {
 		text-align: center;
 		width: 100%;
@@ -51,7 +55,7 @@ export const LandscapePageWrapper=styled.div`
 					line-height: 1.5rem;
 					color: ${props => props.theme.white};
 				}
-				.pad-top {
+				.pad-top { 
 					margin-top: 10px;
 				}
 			}
@@ -65,16 +69,18 @@ export const LandscapePageWrapper=styled.div`
 				font-size: 1.125rem;
 				text-align: center;
 				padding: 1rem 0.25rem;
-				color: ${props => props.theme.white};
+				color: ${props => props.theme.bodyRevert};
 				background: ${props => props.theme.tertiaryColor};
 				z-index: 0;
 				border-bottom-right-radius: 0.8rem;
 				border-bottom-left-radius: 0.8rem;
 				transform: translateY(-6rem);
-				transition: all 0.5s ease;
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 				p {
 					margin: 0;
+					color: ${props => props.theme.textRevert};
+					transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 				}
 			}
 
@@ -113,22 +119,32 @@ export const LandscapePageWrapper=styled.div`
 		width: 4.75rem;
 		height: 4.75rem;
 	}
+	.meshtitle-img-1 .vulcan-img{
+  		width: 6rem;
+  		hight: 6rem;
+	}
 	.title-0, .title-1, .subtitle-0, .subtitle-1 {
 		position: relative;
 		top: -1.25rem;
 	}
 	.title-0, .subtitle-0 {
 		text-align: end;
+		max-width: 12rem;
+	}
+	.title-1, .subtitle-1 {
+		max-width: 13rem;
 	}
 	.title-0, .title-1 {
 		font-size: 1.25rem;
-		color: #1E2117;
+		color: ${props => props.theme.text};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.subtitle-0, .subtitle-1 {
 		font-size: 1rem;
-		font-family: 'Open Sans';
+		font-family: "Qanelas Soft", "Open Sans", sans-serif;
 		font-weight: 400;
-		color: #a0a0a0;
+		color: ${props => props.theme.grey8C8C8CToGreyA0A0A0};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.dashLine-0 {
 		border-bottom: 1px dashed #a0a0a0;
@@ -140,9 +156,10 @@ export const LandscapePageWrapper=styled.div`
 		margin: 2.5em 0;
 	}
 	.vertical-timeline::before {
-		background: #1E2117;
+		background: ${props => props.theme.whiteToGreen1E2117};
 		border-radius: 4rem;
 		width: 0.5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.vertical-timeline--two-columns .vertical-timeline-element-icon {
 		box-shadow: none;
@@ -151,12 +168,15 @@ export const LandscapePageWrapper=styled.div`
 	}
 	.vertical-timeline-element-content {
 		border-radius: 1.25em;
+		background: ${props => props.theme.body};
 		box-shadow: none;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.meshBubble {
 		background: #00B39F;
 		margin-top: 5rem;
-		border: 8px solid #1E2117;
+		border: 8px solid ${props => props.theme.whiteToGreen1E2117};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.hideIcon {
 		display: none;
@@ -221,35 +241,43 @@ export const LandscapePageWrapper=styled.div`
 
 	@media screen and (min-width: 1200px) {
 		.dashLine-0 {
-			margin-left: -33%;
-			margin-right: 45%;
+			margin-left: -28%;
+			position: absolute;
+			width: 75%;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			margin-right: -33%;
-			margin-left: 45%;
+			margin-left: 39%;
+			position: absolute;
+			top: 5rem;
+			width: 77%;
 		}
 		.title-1, .subtitle-1 {
 			left: 45%;
 		}
 		.title-0, .subtitle-0 {
-			right: 45%
+			left: 5%
 		}
 	}
 
 	@media screen and (min-width: 992px) and (max-width: 1200px) {
 		.dashLine-0 {
-			margin-left: -40%;
-			margin-right: 30%;
+			margin-left: -30%;
+			position: absolute;
+			width: 85%;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			margin-left: 30%;
-			margin-right: -40%;
+			margin-left: 25%;
+			position: absolute;
+			top: 5rem;
+			width: 92%;
 		}
 		.title-1, .subtitle-1 {
 			left: 30%;
 		}
 		.title-0, .subtitle-0 {
-			right: 30%;
+			left: 5%;
 		}
 	}
 	@media screen and (min-width: 767px) and (max-width: 1200px) {
@@ -289,18 +317,22 @@ export const LandscapePageWrapper=styled.div`
 	}
 	@media screen and (min-width: 767px) and (max-width: 996px) {
 		.dashLine-0 {
-			margin-left: -40%;
-			margin-right: 15%;
+			margin-left: -32%;
+			position: absolute;
+			width: 100%;
+			top: 5rem;
 		}
 		.dashLine-1 {
-			margin-left: 15%;
-			margin-right: -40%;
+			margin-left: 13%;
+			position: absolute;
+			top: 5rem;
+			width: 103%;
 		}
 		.title-1, .subtitle-1 {
 			left: 15%;
 		}
 		.title-0, .subtitle-0 {
-			right: 15%;
+			left: 5%;
 		}
 		.meshtitle-img-0 {
 			margin-left: -3rem;
@@ -331,11 +363,14 @@ export const LandscapePageWrapper=styled.div`
 		}
 		.title-0, .title-1, .subtitle-0, .subtitle-1 {
 			text-align: end;
-			width: 15rem;
+			min-width: 13rem;
+			margin-left: 2.25rem;
 		}
 		.dashLine-0, .dashLine-1 {
 			margin-left: -5rem;
 			width: 20rem;
+			position: absolute;
+			top: 4.15rem;
 		}
 		.meshtitle-img-0 img, .meshtitle-img-1 img {
 			width: 3.25rem;
@@ -349,12 +384,14 @@ export const LandscapePageWrapper=styled.div`
 	.landscape-table {
 		width: 100%;
 		margin: 2rem 0;
-		box-shadow: 0px 2px 16px rgba(0, 0, 0, 0.2);
+		box-shadow: ${props => props.theme.boxShadowGreyA3A3A3toBlackTwo};
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		a { 
-			color: ${props => props.theme.tertiaryColor};
+			color: ${props => props.theme.text};
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	
 			&:hover {
 				color: ${props => props.theme.secondaryColor};
@@ -367,7 +404,8 @@ export const LandscapePageWrapper=styled.div`
 		padding: 0.75rem;
 		font-weight: 600;
 		color: ${props => props.theme.white};
-		background: ${props => props.theme.tertiaryColor};
+		background: ${props => props.theme.grey404040ToGrey1E2117};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	ul.category {
 		margin: 0;
@@ -388,10 +426,19 @@ export const LandscapePageWrapper=styled.div`
 	.react-tabs__tab {
 		bottom: 0px;
 		padding: 1.25rem;
-		&:hover {
-			background-color: ${props => props.theme.tertiaryColor};
+		background-color: ${props => props.theme.grey262626ToGreen3C494F};
+		border-right: 1px solid ${props => props.theme.shadowLightColor};
+		border-bottom: 1px solid ${props => props.theme.shadowLightColor};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+		&:nth-child(1){
 			border-top-left-radius: .5rem;
-			border-top-right-radius: .5rem;
+		}
+		&:hover {
+			background-color: ${props => props.theme.grey404040ToGrey1E2117};
+			color: ${props => props.theme.white};
+			&:nth-child(1){
+				border-top-left-radius: .5rem;
+			}
 		}
 	}
 	.react-tabs__tab-list {
@@ -403,26 +450,36 @@ export const LandscapePageWrapper=styled.div`
 		border-top-left-radius: .5rem;
 		border-top-right-radius: .5rem;
 		color: #ffffff;
-		background: #00B39F;
+		background: ${props => props.theme.green009A89ToGreen00B39F};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.react-tabs__tab--selected {
-		background: ${props => props.theme.tertiaryColor};
-		border-color: ${props => props.theme.tertiaryColor};
-		color: white;
+		background: ${props => props.theme.grey404040ToGrey1E2117};
+		border-color: ${props => props.theme.grey404040ToGrey1E2117};
+		border-right: 1px solid ${props => props.theme.shadowLightColor};
+		border-radius:0;
+		color: ${props => props.theme.white};
 		font-weight: 600;
+		// border-bottom: 0px;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+	}
+	.react-tabs__tab:focus:after{
+		content: none;
 	}
 	.card-content {
 		border-right: none;
 	}
 	.odd-row {
-		background: #ffffff;
+		background: ${props => props.theme.grey212121ToWhite};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		&:hover{
 			box-shadow: 0px 2px 5px -10px black;
 			transform: translateY(0px);
 		}
 	}
 	.even-row {
-		background: #efefef;
+		background: ${props => props.theme.grey212121ToWhite};
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		&:hover{
 			box-shadow: 10px 2px 5px -10px black;
 			transform: translateY(0px);
@@ -433,6 +490,7 @@ export const LandscapePageWrapper=styled.div`
 		box-shadow: 1px 1px 6px -6px ${props => props.theme.primaryLightColorTwo};
 		border-radius: .75rem;
 		line-height: 1.5rem;
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 	}
 	.AboutLandscape {
 		display: flex;
@@ -462,7 +520,7 @@ export const LandscapePageWrapper=styled.div`
 	.Legend {
 		display: flex;
 		padding: .7rem;
-		text-align: right;
+		text-align: left;
 		margin-left: auto;
 		vertical-align: middle;
 		border: 1px ${props => props.theme.primaryColor};
@@ -471,11 +529,13 @@ export const LandscapePageWrapper=styled.div`
 		color: #efefef;
 		font-size: .9rem;
 		border-style: inset; 
+		transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 		span {
 			font-size: 1rem;
 			font-weight:600;
 			margin: auto;
 			margin-right: 1rem;
+			padding: 0 0.5rem;
 		}
 		img {
 			height: 2rem;
@@ -498,6 +558,7 @@ export const LandscapePageWrapper=styled.div`
 			color: ${props => props.theme.darkJungleGreenColor};
 			border: 1px dashed ${props => props.theme.primaryLightColor};
 			margin: 0rem .3rem;
+			transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
 		}
 	}

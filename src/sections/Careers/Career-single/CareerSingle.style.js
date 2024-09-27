@@ -22,17 +22,20 @@ const CareerPageWrapper = styled.div`
     .job-details {
         h5 {
             font-weight: 600;
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
             svg {
                 vertical-align: top;
-                color: ${props => props.theme.primaryLightColorTwo};
+                color: ${props => props.theme.whiteToGreen00D3A9};
                 width: 2rem;
+                transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
             }
         }
 
         p {
             margin-left: 2.25rem;
-            color: rgba(0, 0, 0, 0.5);
+            color: ${props => props.theme.whiteFiveToBlackFive};
+            transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
     }
 
@@ -46,27 +49,30 @@ const CareerPageWrapper = styled.div`
     .layer5-logo {
         width: 15rem;
         margin: auto;
+
+        svg {
+            .layer5-colorMode_svg__colorMode1 {
+              fill: ${props => props.theme.whiteToGreen3C494F};
+              transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+            }
+          }
     }
 
     @media screen and (max-width: 1200px) and (min-width: 768px) {
         .layer5-logo {
-            img {
-                margin-top: 8%;
-            }
-        }
-    }
-
-    @media screen and (max-width: 767px) {
-        .layer5-logo {
-            img {
-                margin: 0 0 1.5rem;
-            }
+            margin-top: 8%;
         }
     }
 
     @media screen and (max-width: 900px) {
         .layer5-logo {
-            width: 10rem;
+            width: 13.5rem;
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .layer5-logo {
+                margin: 0 auto 1.5rem;
         }
     }
 

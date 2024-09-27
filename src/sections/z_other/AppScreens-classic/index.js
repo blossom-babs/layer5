@@ -4,23 +4,24 @@ import SectionTitle from "../../../reusecore/SectionTitle";
 import Button from "../../../reusecore/Button";
 import { SlickSlider, SliderItem } from "../../../reusecore/SlickSlider";
 
-import { IoIosArrowRoundBack, IoIosArrowRoundForward } from "react-icons/io";
+import { IoIosArrowRoundBack } from "@react-icons/all-files/io/IoIosArrowRoundBack";
+import { IoIosArrowRoundForward } from "@react-icons/all-files/io/IoIosArrowRoundForward";
 
-import screen1 from "../../../assets/images/classic/screens/secreens-1.png";
-import screen2 from "../../../assets/images/classic/screens/secreens-2.png";
-import screen3 from "../../../assets/images/classic/screens/secreens-3.png";
-import screen4 from "../../../assets/images/classic/screens/secreens-4.png";
-import screen5 from "../../../assets/images/classic/screens/secreens-5.png";
+import screen1 from "../../../assets/images/classic/screens/secreens-1.webp";
+import screen2 from "../../../assets/images/classic/screens/secreens-2.webp";
+import screen3 from "../../../assets/images/classic/screens/secreens-3.webp";
+import screen4 from "../../../assets/images/classic/screens/secreens-4.webp";
+import screen5 from "../../../assets/images/classic/screens/secreens-5.webp";
 
 import AppScreenSctionWrapper from "./appScreenSection.style";
 
 const AppScreensClassic = () => {
-  const ArrowLeft = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowLeft = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-prev-icon">
       <IoIosArrowRoundBack />
     </button>
   );
-  const ArrowRight = ({ currentSlide, slideCount, ...props }) => (
+  const ArrowRight = ({ ...props }) => (
     <button {...props} className="slick-arrow slick-next-icon">
       <IoIosArrowRoundForward />
     </button>

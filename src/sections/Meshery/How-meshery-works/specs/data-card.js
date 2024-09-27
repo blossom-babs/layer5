@@ -8,10 +8,11 @@ import Counter from "../../../../reusecore/Counter";
 import { URL } from "../../../Counters/index";
 
 const DataCardWrapper = styled.div`
-  background: ${props => props.theme.white};
+  background: ${props => props.theme.grey222222ToWhite};
   border-radius: 10px;
-  color: ${props => props.theme.black};
+  color: ${props => props.theme.text};
   padding: 2rem;
+  transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   
   ul{
     list-style: none;
@@ -27,6 +28,7 @@ const DataCardWrapper = styled.div`
       }
       h5{
         font-weight: 600;
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
       }
      }
      
@@ -78,7 +80,7 @@ const DataCard = () => {
                 <Counter
                   duration={3}
                   separator=","
-                  end={800}
+                  end={10000}
                   suffix="+" />
               </h3>
               <p>Users</p>
@@ -90,7 +92,7 @@ const DataCard = () => {
                   separator=","
                   end={performanceCount} />
               </h3>
-              <p>Performance Tests run</p>
+              <p>Performance tests run</p>
             </li>
           </ul>
         </Col>

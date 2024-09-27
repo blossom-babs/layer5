@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "gatsby";
 
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaLinkedinIn,
-  FaEnvelope,
-  FaPinterestP,
-  FaInstagram
-} from "react-icons/fa";
+// import {
+//   FaFacebookF,
+//   FaTwitter,
+//   FaLinkedinIn,
+//   FaEnvelope,
+//   FaPinterestP,
+//   FaInstagram
+// } from "react-icons/fa";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
@@ -16,7 +16,7 @@ import ParticleComponent from "../../../reusecore/Particle";
 
 import logo from "../../Footer/images/footer-logo-two.svg";
 
-import FooterBGTwo from "../../Footer/images/footer-particle-two.png";
+import FooterBGTwo from "../../Footer/images/footer-particle-two.webp";
 
 import FooterWrapper from "./footer.style";
 
@@ -35,7 +35,7 @@ const FooterClassic = () => {
               <form className="subscribe-form">
                 <input type="text" placeholder="Search here..." />
                 <Button>
-                  <FaEnvelope />
+                  {/* <FaEnvelope /> */}
                 </Button>
               </form>
             </div>
@@ -51,7 +51,7 @@ const FooterClassic = () => {
                   <Link to="#">Android App</Link>
                 </li>
                 <li>
-                  <Link to="#">ios App</Link>
+                  <Link to="#">iOS App</Link>
                 </li>
                 <li>
                   <Link to="#">Desktop</Link>
@@ -67,13 +67,13 @@ const FooterClassic = () => {
                   <Link to="#">FAQ</Link>
                 </li>
                 <li>
-                  <Link to="#">Privecy</Link>
+                  <Link to="#">Privacy</Link>
                 </li>
                 <li>
                   <Link to="#">Reporting</Link>
                 </li>
                 <li>
-                  <Link to="#">Terms & Condition</Link>
+                  <Link to="#">Terms & Conditions</Link>
                 </li>
               </ul>
             </div>
@@ -84,27 +84,27 @@ const FooterClassic = () => {
               <ul className="social">
                 <li>
                   <Link to="#">
-                    <FaFacebookF />
+                    {/* <FaFacebookF /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaTwitter />
+                    {/* <FaTwitter /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaInstagram />
+                    {/* <FaInstagram /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaLinkedinIn />
+                    {/* <FaLinkedinIn /> */}
                   </Link>
                 </li>
                 <li>
                   <Link to="#">
-                    <FaPinterestP />
+                    {/* <FaPinterestP /> */}
                   </Link>
                 </li>
               </ul>

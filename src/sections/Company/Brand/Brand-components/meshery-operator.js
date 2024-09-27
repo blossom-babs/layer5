@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator-dark.png";
-import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import MesheryOperatorDark from "../../../../assets/images/meshery-operator/meshery-operator.webp";
+import MesheryOperator from "../../../../assets/images/meshery-operator/meshery-operator-white.webp";
 
 const MesheryOperatorWrapper = styled.section`
     .sub-project {
@@ -44,9 +44,9 @@ const MesheryOperatorBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
             Logos
-            </h3>
+            </h2>
           </Col>
           <SRLWrapper>
             <Row Vcenter className="ImgDiv">
@@ -61,9 +61,9 @@ const MesheryOperatorBrand = () => {
         </Row>
         <Row>
           <Col>
-            <h3 className="layerH3 in">
+            <h2 className="layerH3 in">
               Colors
-            </h3>
+            </h2>
           </Col>
           <Col>
             <p>

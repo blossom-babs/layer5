@@ -1,13 +1,13 @@
 import React from "react";
-import {SRLWrapper} from "simple-react-lightbox";
+import { SRLWrapper } from "simple-react-lightbox";
 import { Row, Col } from "../../../../reusecore/Layout";
 import Button from "../../../../reusecore/Button";
 import ColorBox from "../../../../components/ColorBox";
-import { FiDownloadCloud } from "react-icons/fi";
-import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.png";
-import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.png";
-import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-dark-text.png";
-import MeshDarkTagText from "../../../../assets/images/meshery/meshery-dark-tag-text.png";
+import { FiDownloadCloud } from "@react-icons/all-files/fi/FiDownloadCloud";
+import MeshLogoLightText from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text.webp";
+import MeshLogoLightTextSide from "../../../../assets/images/meshery/full-logo/meshery-logo-light-text-side.webp";
+import MeshDarkText from "../../../../assets/images/meshery/text-only/meshery-light-text.svg";
+import MeshLogoOnly from "../../../../assets/images/meshery/icon-only/meshery-logo-dark.webp";
 
 
 const MesheryBrand = () => {
@@ -16,7 +16,7 @@ const MesheryBrand = () => {
       <Row className="brand-section">
         <Col xs={12} sm={6}>
           <h1 className="layerH3">
-                        Meshery
+            Meshery
           </h1>
         </Col>
         <Col xs={12} sm={6} className="download-button">
@@ -49,7 +49,7 @@ const MesheryBrand = () => {
               <img src={MeshDarkText} alt="MesheryDark Logo"/>
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshDarkTagText} alt="MesheryDarkText Logo"/>
+              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
             </Col>
           </Row>
           <Row Vcenter className="ImgDiv">
@@ -57,7 +57,7 @@ const MesheryBrand = () => {
               <img src={MeshLogoLightText} alt="MesheryLightText Logo"/>
             </Col>
             <Col xs={12} sm={4}>
-              <img src={MeshLogoLightTextSide} alt="MesheryLightTextSide Logo"/>
+              <img src={MeshLogoOnly} alt="Meshery Logo" />
             </Col>
           </Row>
         </SRLWrapper>

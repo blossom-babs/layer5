@@ -1,52 +1,57 @@
 import React from "react";
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import SoSpecialWrapper from "./so-special-style";
 
 import Button from "../../../reusecore/Button";
 import { graphql, useStaticQuery } from "gatsby";
 import Image from "../../../components/image";
+// import { useStyledDarkMode } from "../../../theme/app/useStyledDarkMode";
 
 const SoSpecial = () => {
   const data = useStaticQuery(
-    graphql`
-            query newsList {
-                allMdx(
-                    filter: { fields: { collection: { eq: "news" } }, frontmatter: { published: { eq: true } } }
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    limit: 8
-                ) 
-                {
-                    nodes {
-                        id
-                        frontmatter {
-                            title
-                            author
-                            eurl
-                            thumbnail{
-                              childImageSharp{
-                                fluid(maxWidth: 1000){
-                                    ...GatsbyImageSharpFluid_withWebp
-                                }
-                              }
-                              extension
-                              publicURL
-                            }
-                            
-                        }
-                        fields {
-                            slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query newsList {
+  allMdx(
+    filter: {fields: {collection: {eq: "news"}}, frontmatter: {published: {eq: true}}}
+    sort: {fields: [frontmatter___date], order: DESC}
+    limit: 8
+  ) {
+    nodes {
+      id
+      frontmatter {
+        title
+        author
+        eurl
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+        darkthumbnail{
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
   const settings = {
     dots: false,
     infinite: false,
     speed: 500,
     slidesToShow: 2.5,
-    swipeToSlide:true,
+    swipeToSlide: true,
 
     responsive: [
       {
@@ -92,24 +97,34 @@ const SoSpecial = () => {
       }
     ]
   };
-  return(
+
+  // const { isDark } = useStyledDarkMode();
+
+  return (
     <SoSpecialWrapper>
       <div className="so-special-head">
-        <h4>LAYER5 IN THE NEWS</h4>
-        <h1>We're making a mesh of things</h1>
+        <p>LAYER5 IN THE NEWS</p>
+        <h1>We're making a splash</h1>
       </div>
       <div className="special_carousel">
         <Slider {...settings}>
           {
-            data.allMdx.nodes.map(({id,frontmatter,fields}) => (
+            data.allMdx.nodes.map(({ id, frontmatter, fields }) => (
               <Button className="special-cont_btn" url={fields.slug} key={id}>
                 <div id="special-cont" >
                   <div id="special-cont_img">
+                    {/* {console.log("Dark Thumbnail:", frontmatter.darkthumbnail)}
+                    {console.log("Thumbnail:", frontmatter.thumbnail)} */}
                     <Image
-                      {...frontmatter.thumbnail}
+                      {...(frontmatter.thumbnail)}
                       imgStyle={{ objectFit: "contain" }}
                       alt={frontmatter.title}
                     />
+                    {/* <Image
+                      {...((isDark && frontmatter.darkthumbnail && frontmatter.darkthumbnail.publicURL) || frontmatter.thumbnail)}
+                      imgStyle={{ objectFit: "contain" }}
+                      alt={frontmatter.title}
+                    /> */}
                   </div>
                   <div id="special-cont_content">
                     <p className="special-cont_para">{frontmatter.title}</p>
@@ -117,13 +132,14 @@ const SoSpecial = () => {
                 </div>
               </Button>
             ))}
+
         </Slider>
       </div>
-      <div className="so-special-foot">
-        <h5>Layer5 provides cloud native management for monoliths and</h5>
-        <h5>microservices alike.</h5>
-        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects"/>
-      </div>
+      {/* <div className="so-special-foot">
+        <p>Layer5 provides cloud native management for monoliths and <br></br>
+                   microservices alike.</p>
+        <Button className="so-special-foot-btn" primary url="/projects" title="Our Projects" />
+      </div> */}
     </SoSpecialWrapper>
   );
 };

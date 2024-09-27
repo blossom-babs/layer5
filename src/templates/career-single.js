@@ -1,13 +1,10 @@
 import React from "react";
 import { graphql } from "gatsby";
-import { ThemeProvider } from "styled-components";
-import Layout from "../components/layout";
+
+
 import SEO from "../components/seo";
-import Navigation from "../sections/General/Navigation";
+
 import CareerSingle from "../sections/Careers/Career-single";
-import Footer from "../sections/General/Footer";
-import { GlobalStyle } from "../sections/app.style";
-import theme from "../theme/app/themeStyles";
 
 export const query = graphql`
     query CareerBySlug($slug: String!) {
@@ -17,6 +14,7 @@ export const query = graphql`
                 title,
                 type,
                 location,
+                abstract,
                 start_date,
                 duration,
                 salary,
@@ -26,19 +24,23 @@ export const query = graphql`
     }
 `;
 
-const CareerSinglePage = ({data}) => {
+const CareerSinglePage = ({ data }) => {
+
+
   return (
-    <ThemeProvider theme={theme}>
-      <Layout>
-        <GlobalStyle />
-        <SEO title={data.mdx.frontmatter.title} />
-        <Navigation />
-        <CareerSingle data={data}/>
-        <Footer />
-      </Layout>
-    </ThemeProvider>
+
+    <>
+
+
+      <CareerSingle  data={data} />
+
+    </>
+
   );
 };
 
 export default CareerSinglePage;
 
+export const Head = ({ data }) => {
+  return <SEO title={data.mdx.frontmatter.title} description={data.mdx.frontmatter.abstract}/>;
+};

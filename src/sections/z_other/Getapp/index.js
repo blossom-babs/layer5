@@ -2,14 +2,14 @@ import React from "react";
 import { Link } from "gatsby";
 
 import { Container, Row, Col } from "../../../reusecore/Layout";
-import { DiAppstore } from "react-icons/di";
-import { FaGooglePlay } from "react-icons/fa";
+// import { DiAppstore } from "react-icons/di";
+// import { FaGooglePlay } from "react-icons/fa";
 
-import AppSecreenImage from "../../../assets/images/app/get-app/get-app-screen.png";
-import particle1 from "../../../assets/images/app/particle/09.png";
-import particle2 from "../../../assets/images/app/particle/10.png";
-import particle3 from "../../../assets/images/app/particle/11.png";
-import particle4 from "../../../assets/images/app/particle/13.png";
+import AppSecreenImage from "../../../assets/images/app/get-app/get-app-screen.webp";
+import particle1 from "../../../assets/images/app/particle/09.webp";
+import particle2 from "../../../assets/images/app/particle/10.webp";
+import particle3 from "../../../assets/images/app/particle/11.webp";
+import particle4 from "../../../assets/images/app/particle/13.webp";
 
 import GetAppSectionWrap from "./getAppSection.style";
 
@@ -32,7 +32,7 @@ const GetApp = () => {
               </p>
               <div className="btn-block">
                 <Link to="#" className="getapp-btn apl-btn">
-                  <DiAppstore />
+                  {/* <DiAppstore /> */}
                   <p>
                     Download iphone App
                     <span>App Store</span>
@@ -40,7 +40,7 @@ const GetApp = () => {
                 </Link>
 
                 <Link to="#" className="getapp-btn">
-                  <FaGooglePlay />
+                  {/* <FaGooglePlay /> */}
                   <p>
                     Get it On
                     <span>Google Play Store</span>

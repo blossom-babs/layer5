@@ -4,14 +4,21 @@ import { Row, Col } from "../../../reusecore/Layout";
 import Button from "../../../reusecore/Button";
 import { feedbackData } from "./feedbackData";
 import Slider from "react-slick";
-import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { FiArrowRight } from "@react-icons/all-files/fi/FiArrowRight";
+import { FiArrowLeft } from "@react-icons/all-files/fi/FiArrowLeft";
 import styled from "styled-components";
 import BlockQouteImage from "../../../assets/images/blockquote/quote-left.svg";
+import useHasMounted from "../../../utils/useHasMounted";
+
 
 export const WorkshopsListWrapper = styled.div`
 
 	margin: 4rem 0;
-
+	Button:hover {
+		box-shadow: 0 2px 10px ${props => props.theme.whiteFourToBlackFour};
+	  }
 	.workshops-col {
 			margin: auto;
 	}
@@ -55,6 +62,7 @@ export const WorkshopsListWrapper = styled.div`
 				background: ${props => props.theme.secondaryColor};
 				width: 2.75rem;
 				height: 2.75rem;
+        padding: 8px;
 				border-radius: 2rem;
 
 				&:hover {
@@ -75,7 +83,7 @@ export const WorkshopsListWrapper = styled.div`
 			}
 
 			.slick-dots {
-				bottom: -2rem;
+				bottom: 2rem;
 			}
 
 			.slick-dots li button:before {
@@ -94,7 +102,8 @@ export const WorkshopsListWrapper = styled.div`
 
 			p {
 				font-size: 1.85rem;
-				color: rgba(0,0,0,0.6)
+				color: ${props => props.theme.whiteSevenToBlackSeven};
+				transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 			}
 		}
 	}
@@ -182,40 +191,41 @@ export const WorkshopsListWrapper = styled.div`
 
 const WorkshopsSection = () => {
   const data = useStaticQuery(
-    graphql`
-            query workshopsList {
-                allMdx(
-                    sort: { fields: [frontmatter___date], order: DESC }
-                    filter: { fields: { collection: { eq: "service-mesh-workshops" } } }
-                ) {
-                    nodes {
-                        frontmatter {
-                            thumbnail {
-                                childImageSharp {
-                                    fluid(maxWidth: 1000) {
-                                    ...GatsbyImageSharpFluid_withWebp
-                                    }
-                                }
-                            extension
-                            publicURL
-                        }
-                    }
-                    fields {
-                        slug
-                        }
-                    }
-                }
-            }
-        `
+    graphql`query workshopsList {
+  allMdx(
+    sort: {fields: [frontmatter___date], order: DESC}
+    filter: {fields: {collection: {eq: "service-mesh-workshops"}}}
+  ) {
+    nodes {
+      frontmatter {
+        thumbnail {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
+          }
+          extension
+          publicURL
+        }
+      }
+      fields {
+        slug
+      }
+    }
+  }
+}
+`
   );
+
+  const hasMounted = useHasMounted();
 
   var settings = {
     infinite: false,
     speed: 400,
     slidesToShow: 1,
     slidesToScroll: 1,
-    nextArrow: <FiArrowRight />,
-    prevArrow: <FiArrowLeft />,
+    nextArrow: (
+      <FiArrowRight />),
+    prevArrow: (
+      <FiArrowLeft />),
     responsive: [
       {
         breakpoint: 700,
@@ -235,12 +245,12 @@ const WorkshopsSection = () => {
           <h1>Workshops</h1>
           <p>Register for the service mesh workshops given by the experts at Layer5 and learn how to <i>mesh</i></p>
           <div className="see-more-button">
-            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops"/>
+            <Button primary title="Checkout all workshops" url="/learn/service-mesh-workshops" />
           </div>
         </Col>
         <Col xs={12} md={9} className="workshops-col">
           <Row>
-            {data.allMdx.nodes.slice(0, 3).map(({frontmatter, fields}, index) => (
+            {data.allMdx.nodes.slice(0, 3).map(({ frontmatter, fields }, index) => (
               <Col xs={12} sm={6} xl={4} className="workshops-card" key={index}>
                 <Link to={fields.slug} >
                   <div className="workshop-thumbnails">
@@ -253,7 +263,7 @@ const WorkshopsSection = () => {
         </Col>
       </div>
       <div className="feedback-section">
-        <Slider {...settings}>
+        {hasMounted && <Slider {...settings}>
           {
             feedbackData.map((data, index) => {
               return (
@@ -266,7 +276,7 @@ const WorkshopsSection = () => {
               );
             })
           }
-        </Slider>
+        </Slider> }
       </div>
     </WorkshopsListWrapper>
   );

@@ -1,5 +1,5 @@
 import React from "react";
-import {Container} from "../../../reusecore/Layout";
+import { Container } from "../../../reusecore/Layout";
 import HowitworksWrapper from "./howitworks.style";
 import HowMesheryWorksDiagram from "./diagram";
 import Feature from "./feature";
@@ -11,35 +11,38 @@ export default function HowItWorks({ title, description, features }) {
     new Array(features.length).fill(false)
   );
 
+  const onInViewStatusChanged = (state, index) => {
+    const newStatusArray = [...viewportStatus];
+    newStatusArray[index] = state;
+    setViewportStatus(newStatusArray);
+    // Calculate the first element in focus, set that as
+    // our new activeExampleIndex. If it's been updated
+    // notify the subscriber.
+    const newExampleIndex = newStatusArray.lastIndexOf(true);
+    if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
+      setActiveExampleIndex(newExampleIndex);
+    }
+  };
+
   return (
     <HowitworksWrapper>
       <Container>
         <div className="root">
-          <div className='g-grid-container headerWrapper'>
+          <div className="g-grid-container headerWrapper">
             <h2 className="g-type-display-2">{title}</h2>
             <p className="g-type-body-large">{description}</p>
           </div>
-          <div className='g-grid-container contentContainer'>
-            <div className='diagram scroll'>
+          <div className="g-grid-container contentContainer">
+            <div className="diagram scroll">
               <HowMesheryWorksDiagram activeExampleIndex={activeExampleIndex} />
             </div>
-            <ul className='features'>
+            <ul className="features">
               {features.map((feature, index) => (
                 <li key={index}>
                   <Feature
                     {...feature}
-                    onInViewStatusChanged={(state) => {
-                      const newStatusArray = [...viewportStatus];
-                      newStatusArray[index] = state;
-                      setViewportStatus(newStatusArray);
-                      // Calculate the first element in focus, set that as
-                      // our new activeExampleIndex. If it's been updated
-                      // notify the subscriber.
-                      const newExampleIndex = newStatusArray.lastIndexOf(true);
-                      if ( activeExampleIndex !== newExampleIndex && newExampleIndex !== -1) {
-                        setActiveExampleIndex(newExampleIndex);
-                      }
-                    }}
+                    index={index}
+                    onInViewStatusChanged={onInViewStatusChanged}
                   />
                 </li>
               ))}

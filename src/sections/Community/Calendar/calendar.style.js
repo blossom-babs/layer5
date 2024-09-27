@@ -29,31 +29,32 @@ const CalendarStyleWrapper = styled.div`
         border-bottom-left-radius: 0px;
     }
     .fc .fc-button-group > .fc-button {
-        background: ${props => props.theme.tertiaryColor};
+        background:  ${props => props.theme.grey222222ToGreen1E2117};    
         padding: 1rem;
         margin: 0px;
         min-width: 2.5rem;
         color: ${props => props.theme.shadowLightColor};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
 
     }
     .fc-direction-ltr .fc-toolbar > * > :not(:first-child) {
-        background: ${props => props.theme.secondaryColor};
+        background: ${props => props.theme.keppelColor};
         min-width: 7.5rem;
         padding: 1rem;
         &:hover{
-            color: ${props => props.theme.headingColor};
+            color: ${props => props.theme.text};
             background: ${props => props.theme.primaryLightColorTwo}; 
         }
 
     }
     .fc .fc-button-primary,
-    .fc .fc-button-primary:disabled {
-        cursor: pointer;
+    .fc .fc-button-primary:disabled{
+        cursor: pointer; 
         font-family: inherit;
         text-decoration: none;
         text-transform: capitalize; 
         border: 0; 
-        
+        opacity: 1;
         padding: 1rem;
         border-radius: 5px;
         -webkit-transition: 450ms all;

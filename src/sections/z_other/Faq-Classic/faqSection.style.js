@@ -45,6 +45,7 @@ const FaqSectionWrapper = styled.section`
             p{
                 font-size: 16px;
                 font-weight: 300;
+                text-align: initial;
                 margin: 0;
             }
         }
@@ -128,7 +129,4 @@ const FaqSectionWrapper = styled.section`
      
     
 `;
-
-
-
 export default FaqSectionWrapper;

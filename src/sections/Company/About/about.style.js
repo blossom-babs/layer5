@@ -1,8 +1,16 @@
 import styled from "styled-components";
 
-
 const AboutSectionWrapper = styled.section`
   
+.About-projects-mobile{
+  display:none;
+}
+.About-projects{
+  display:flex;
+}
+.head-images-2-mobile{
+  display:none;
+}
   .section__particle {
     position: absolute;
     &.one {
@@ -50,16 +58,55 @@ const AboutSectionWrapper = styled.section`
   }
 
   .about-text.text-two {
-    color: ${props => props.theme.headingColor};
+    color: ${(props) => props.theme.sideTextColor};
     font-weight: 400;
     margin-bottom: 28px;
+  }
+  p.section-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin: 0rem;
+  }
+  .head-images {
+    text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+  .head-images-2 {
+    text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+  }
+  .head-images-mobile{
+    display:none;
+  }
+  .colab {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .country {
+    font-weight: 600;
+    font-size: 1.5rem;
+    line-height: normal;
+    margin: 0;
   }
   .aboutus-title {
     
     h2 {
       display: block;
-      font-weight: 400;     
-      margin-bottom: 1rem;
+      font-weight: 500;     
+      font-size: 3.2rem;
       line-height: 1rem;
     }
   }
@@ -70,12 +117,14 @@ const AboutSectionWrapper = styled.section`
       margin-top: 4rem;
       margin-bottom: 0rem;
       font-family:"Qanelas Soft";
-      color:black;
+      color: ${(props) => props.theme.whiteToBlack}; 
+      transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
     }
     h4{
         margin-bottom: 1.7vw;
-        font-family:"Open Sans";
-        color:rgba(0, 0, 0, 0.7);
+        font-family:"Qanelas Soft";
+        color: ${(props) => props.theme.whiteSevenToBlackSeven}; 
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); 
       }
   }
   .section-bottom {
@@ -108,11 +157,24 @@ const AboutSectionWrapper = styled.section`
   }
   .section-title{
     #contact{
-      color:white;
-      :hover{
-        color:black;
-      }
+      background: ${(props) => props.theme.highlightColor}; 
+
+      &:hover {
+            background: ${(props) => props.theme.highlightLightColor}; 
+            box-shadow: ${(props) => props.theme.whiteFourToBlackFour} 0px 2px 10px;
+        }
     }
+  }
+  #mapBack {
+    .svg{
+        .layer5-collaboration-map_svg__colorMode1{
+            fill: ${(props) => props.theme.blackToWhite};
+        }
+    }
+  }
+  .caption {
+    font-size: .9rem;
+    font-style: italic;
   }
   
   @media only screen and (max-width: 1400px) {
@@ -231,6 +293,34 @@ const AboutSectionWrapper = styled.section`
   }
   @media only screen and (max-width: 480px) {
     padding: 40px 0 60px 0;
+    .head-images-mobile{
+      display:flex;
+    }
+    .head-images{
+      display:none;
+    }
+    .head-images-2-mobile{
+      margin:2rem 0;
+      display:block;
+      text-align: center;
+
+    svg {
+      .cncf-stacked-color_svg__st0 {
+        fill: ${(props) => props.theme.whiteToGreen3C494F};
+        transition: 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+      }
+    }
+    }
+    .head-images-2{
+      display:none;
+    }
+    .About-projects{
+      display:none;
+    }
+    .About-projects-mobile{
+      margin-bottom:2rem;
+      display:flex;
+    }
     .section-title {
     h2 {
       margin-bottom: 0rem;
